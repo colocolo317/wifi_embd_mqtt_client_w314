@@ -1,0 +1,62 @@
+# Silicon Labs Project Configuration Tools: slcp, v0, Component selection file.
+project_name: wifi_embedded_mqtt_client_soc_v441
+label: wifi_embedded_mqtt_client_soc_v441
+description: |
+  Demonstrates how to build an MQTT client and connects with an MQTT broker.
+category: Example|Wi-Fi
+filter:
+- name: Project Difficulty
+  value: [Beginner]
+- name: Wireless Technology
+  value: [Wi-Fi]
+package: wifi
+quality: production
+readme:
+- {path: readme.md}
+source:
+- {path: app.c}
+- {path: main.c}
+include:
+- path: ''
+  file_list:
+  - {path: app.h}
+  - {path: SEGGER_RTT_Conf.h}
+sdk: {id: gecko_sdk, version: 4.4.1}
+toolchain_settings:
+- {value: -Wall -Werror, option: gcc_compiler_option}
+component:
+- {from: wiseconnect3_sdk, id: SIWG917M111MGTBA}
+- {from: wiseconnect3_sdk, id: basic_network_config_manager}
+- {from: wiseconnect3_sdk, id: brd4338a}
+- {from: wiseconnect3_sdk, id: mqtt}
+- {from: wiseconnect3_sdk, id: network_manager}
+- {from: wiseconnect3_sdk, id: si917_memory_default_config}
+- {from: wiseconnect3_sdk, id: sl_si91x_internal_stack}
+- {from: wiseconnect3_sdk, id: sl_si91x_mem_pool_buffers}
+- {from: wiseconnect3_sdk, id: syscalls}
+- {from: wiseconnect3_sdk, id: wifi}
+- {from: wiseconnect3_sdk, id: wifi_resources}
+- {from: wiseconnect3_sdk, id: wiseconnect3_common}
+- {id: freertos}
+- {id: sl_system}
+other_file:
+- {path: resources/readme/add_topic_name.png}
+- {path: resources/readme/application_prints_ncp.png}
+- {path: resources/readme/application_prints_soc.png}
+- {path: resources/readme/connect.png}
+- {path: resources/readme/delete_connections.png}
+- {path: resources/readme/mqtt_explorer_msg.png}
+- {path: resources/readme/setup_soc_ncp.png}
+define:
+- {name: SL_SI91X_PRINT_DBG_LOG}
+- {name: SLI_SI91X_EMBEDDED_MQTT_CLIENT}
+configuration:
+- {name: SL_BOARD_ENABLE_VCOM, value: '1'}
+ui_hints:
+  highlight:
+  - {path: readme.md, focus: true}
+sdk_extension:
+- {id: wiseconnect3_sdk, version: 3.1.4}
+post_build: {path: ../../SDKs/gecko_sdk_2/extension/wiseconnect/utilities/postbuild_profile/wiseconnect_soc.slpb,
+  profile: wiseconnect_soc}
+
