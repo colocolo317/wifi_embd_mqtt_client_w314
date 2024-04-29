@@ -41,14 +41,14 @@
  *                    Constants
  ******************************************************/
 
-#define MQTT_BROKER_IP   "192.168.1.27"
-#define MQTT_BROKER_PORT 8886
+#define MQTT_BROKER_IP   "192.168.137.1"
+#define MQTT_BROKER_PORT 1883
 
 #define CLIENT_PORT 1
 
 #define CLIENT_ID "WISECONNECT-SDK-MQTT-CLIENT-ID"
 
-#define TOPIC_TO_BE_SUBSCRIBED "THERMOSTAT-DATA\0"
+#define TOPIC_TO_BE_SUBSCRIBED "AUO/aecoPost/dataURL"
 #define QOS_OF_SUBSCRIPTION    SL_MQTT_QOS_LEVEL_1
 
 #define PUBLISH_TOPIC          "WISECONNECT_SDK_TOPIC"
@@ -69,10 +69,10 @@
 #define MQTT_CONNECT_TIMEOUT   5000
 #define MQTT_KEEPALIVE_RETRIES 0
 
-#define SEND_CREDENTIALS 0
+#define SEND_CREDENTIALS 1
 
-#define USERNAME "username"
-#define PASSWORD "password"
+#define USERNAME "mqttusr"
+#define PASSWORD "88888888"
 
 /******************************************************
  *               Variable Definitions
