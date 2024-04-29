@@ -36,6 +36,7 @@
 #include "cacert.pem.h"
 #include "sl_wifi.h"
 #include "string.h"
+#include "app.h"
 
 /******************************************************
  *                    Constants
@@ -78,8 +79,8 @@
  *               Variable Definitions
  ******************************************************/
 
-const osThreadAttr_t thread_attributes = {
-  .name       = "app",
+const osThreadAttr_t mqtt_thread_attributes = {
+  .name       = "mqtt_app",
   .attr_bits  = 0,
   .cb_mem     = 0,
   .cb_size    = 0,
@@ -157,53 +158,65 @@ sl_mqtt_client_last_will_message_t last_will_message = {
 /******************************************************
  *               Function Declarations
  ******************************************************/
-static void application_start(void *argument);
 void mqtt_client_message_handler(void *client, sl_mqtt_client_message_t *message, void *context);
 void mqtt_client_event_handler(void *client, sl_mqtt_client_event_t event, void *event_data, void *context);
 void mqtt_client_error_event_handler(void *client, sl_mqtt_client_error_status_t *error);
 void mqtt_client_cleanup();
 void print_char_buffer(char *buffer, uint32_t buffer_length);
-sl_status_t mqtt_example();
+sl_status_t mqtt_client_setup();
+sl_status_t mqtt_net_up(void);
+
+osSemaphoreId_t mqtt_sem;
+
 
 /******************************************************
  *               Function Definitions
  ******************************************************/
 
-void app_init(const void *unused)
+sl_status_t mqtt_net_up(void)
 {
-  UNUSED_PARAMETER(unused);
-  osThreadNew((osThreadFunc_t)application_start, NULL, &thread_attributes);
-}
-
-static void application_start(void *argument)
-{
-  UNUSED_PARAMETER(argument);
   sl_status_t status;
 
   status = sl_net_init(SL_NET_WIFI_CLIENT_INTERFACE, &wifi_mqtt_client_configuration, NULL, NULL);
   if (status != SL_STATUS_OK && status != SL_STATUS_ALREADY_INITIALIZED) {
     printf("Failed to start Wi-Fi client interface: 0x%lx\r\n", status);
-    return;
+    return status;
   }
   printf("\r\nWi-Fi client interface up Success\r\n");
 
   status = sl_net_up(SL_NET_WIFI_CLIENT_INTERFACE, SL_NET_DEFAULT_WIFI_CLIENT_PROFILE_ID);
   if (status != SL_STATUS_OK) {
     printf("Failed to bring Wi-Fi client interface up: 0x%lx\r\n", status);
-    return;
+    return status;
   }
-
   printf("Wi-Fi client connected\r\n");
+  return status;
+}
 
-  mqtt_example();
+void mqtt_init(void)
+{
+  mqtt_sem = osSemaphoreNew(1,0,NULL);
+  if (mqtt_sem == NULL){
+      printf("Fail to new sem\r\n");
+  }
+  osThreadNew((osThreadFunc_t)mqtt_task, NULL, &mqtt_thread_attributes);
 
-  while (1) {
-#if defined(SL_CATALOG_POWER_MANAGER_PRESENT)
-    // Let the CPU go to sleep if the system allows it.
-    sl_power_manager_sleep();
-#else
-    osDelay(osWaitForever);
+
+}
+
+void mqtt_task(void *argument)
+{
+  UNUSED_PARAMETER(argument);
+#if AMPAK_NOT_NET_UP
+  mqtt_net_up();
 #endif
+  mqtt_client_setup();
+  //sl_status_t status;
+  while (1) {
+      //printf("Come in task\r\n");
+      //osSemaphoreAcquire(mqtt_sem, 5000);
+      //printf(".");
+
   }
 }
 
@@ -216,12 +229,14 @@ void mqtt_client_cleanup()
 void mqtt_client_message_handler(void *client, sl_mqtt_client_message_t *message, void *context)
 {
   UNUSED_PARAMETER(context);
+
   sl_status_t status;
   printf("Message Received on Topic: ");
 
   print_char_buffer((char *)message->topic, message->topic_length);
   print_char_buffer((char *)message->content, message->content_length);
 
+#if 0
   // Unsubscribing to already subscribed topic.
   status = sl_mqtt_client_unsubscribe(client,
                                       (uint8_t *)TOPIC_TO_BE_SUBSCRIBED,
@@ -234,6 +249,11 @@ void mqtt_client_message_handler(void *client, sl_mqtt_client_message_t *message
     mqtt_client_cleanup();
     return;
   }
+
+#else
+  UNUSED_PARAMETER(client);
+  UNUSED_PARAMETER(status);
+#endif
 }
 
 void print_char_buffer(char *buffer, uint32_t buffer_length)
@@ -256,6 +276,7 @@ void mqtt_client_event_handler(void *client, sl_mqtt_client_event_t event, void 
 {
   switch (event) {
     case SL_MQTT_CLIENT_CONNECTED_EVENT: {
+      printf("SL_MQTT_CLIENT_CONNECTED_EVENT\r\n");
       sl_status_t status;
 
       status = sl_mqtt_client_subscribe(client,
@@ -271,7 +292,7 @@ void mqtt_client_event_handler(void *client, sl_mqtt_client_event_t event, void 
         mqtt_client_cleanup();
         return;
       }
-
+#if 0
       status = sl_mqtt_client_publish(client, &message_to_be_published, 0, &message_to_be_published);
       if (status != SL_STATUS_IN_PROGRESS) {
         printf("Failed to publish message: 0x%lx\r\n", status);
@@ -279,11 +300,12 @@ void mqtt_client_event_handler(void *client, sl_mqtt_client_event_t event, void 
         mqtt_client_cleanup();
         return;
       }
-
+#endif
       break;
     }
 
     case SL_MQTT_CLIENT_MESSAGE_PUBLISHED_EVENT: {
+      printf("SL_MQTT_CLIENT_MESSAGE_PUBLISHED_EVENT\r\n");
       sl_mqtt_client_message_t *published_message = (sl_mqtt_client_message_t *)context;
 
       printf("Published message successfully on topic: ");
@@ -292,6 +314,7 @@ void mqtt_client_event_handler(void *client, sl_mqtt_client_event_t event, void 
     }
 
     case SL_MQTT_CLIENT_SUBSCRIBED_EVENT: {
+
       char *subscribed_topic = (char *)context;
 
       printf("Subscribed to Topic: %s\r\n", subscribed_topic);
@@ -323,7 +346,7 @@ void mqtt_client_event_handler(void *client, sl_mqtt_client_event_t event, void 
   }
 }
 
-sl_status_t mqtt_example()
+sl_status_t mqtt_client_setup()
 {
   sl_status_t status;
 

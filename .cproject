@@ -121,6 +121,7 @@
 									<listOptionValue builtIn="false" value="SL_WIFI_COMPONENT_INCLUDED=1"/>
 									<listOptionValue builtIn="false" value="configNUM_SDK_THREAD_LOCAL_STORAGE_POINTERS=2"/>
 									<listOptionValue builtIn="false" value="SL_COMPONENT_CATALOG_PRESENT=1"/>
+									<listOptionValue builtIn="false" value="AMPAK_NOT_NET_UP=1"/>
 								</option>
 								<inputType id="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.input.93407423" superClass="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
@@ -283,4 +284,6 @@
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 	</storageModule>
+	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 </cproject>
