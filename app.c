@@ -42,14 +42,14 @@
  *                    Constants
  ******************************************************/
 
-#define MQTT_BROKER_IP   "192.168.137.1"
+#define MQTT_BROKER_IP   "10.10.28.233"
 #define MQTT_BROKER_PORT 1883
 
 #define CLIENT_PORT 1
 
 #define CLIENT_ID "WISECONNECT-SDK-MQTT-CLIENT-ID"
 
-#define TOPIC_TO_BE_SUBSCRIBED "AUO/aecoPost/dataURL"
+#define TOPIC_TO_BE_SUBSCRIBED "Ampak/917/command"
 #define QOS_OF_SUBSCRIPTION    SL_MQTT_QOS_LEVEL_1
 
 #define PUBLISH_TOPIC          "WISECONNECT_SDK_TOPIC"
