@@ -84,7 +84,7 @@ void ampak_m4_sleep_wakeup(void)
   /* Configure RAM Usage and Retention Size */
   sl_si91x_configure_ram_retention(WISEMCU_192KB_RAM_IN_USE, WISEMCU_RETAIN_DEFAULT_RAM_DURING_SLEEP);
 
-  printf("\r\nM4 Sleep\r\n");
+  printf("===M4 Sleep===  ");
 
   /* Trigger M4 Sleep*/
   sl_si91x_trigger_sleep(SLEEP_WITH_RETENTION,
@@ -101,6 +101,6 @@ void ampak_m4_sleep_wakeup(void)
   sl_si91x_host_clear_sleep_indicator();
 
   //  /*Start of M4 init after wake up  */
-  printf("\r\nM4 Wake Up\r\n");
+  printf("===M4 Wake Up===\r\n");
 #endif
 }

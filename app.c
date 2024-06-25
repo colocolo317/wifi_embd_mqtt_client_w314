@@ -38,7 +38,7 @@
 #include "sl_wifi.h"
 #include "string.h"
 #include "app.h"
-
+#include "ampak_wl72917/ampak_util.h"
 /******************************************************
  *                    Constants
  ******************************************************/
@@ -480,6 +480,9 @@ sl_status_t mqtt_client_setup()
     return status;
   }
   printf("Connect to mqtt broker Success \r\n");
+
+  osDelay(1000);
+  ampak_m4_sleep_wakeup();
 
   while (!is_execution_completed) {
     osThreadYield(); // TODO: keep running in this while loop
