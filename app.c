@@ -52,17 +52,17 @@
 #define TOPIC_TO_BE_SUBSCRIBED "Ampak/917/command"
 #define QOS_OF_SUBSCRIPTION    SL_MQTT_QOS_LEVEL_1
 
-#define PUBLISH_TOPIC          "WISECONNECT_SDK_TOPIC"
-#define PUBLISH_MESSAGE        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"
-#define QOS_OF_PUBLISH_MESSAGE 0
+#define PUBLISH_TOPIC          "Ampak/917/report"
+#define PUBLISH_MESSAGE        "I am alive."
+#define QOS_OF_PUBLISH_MESSAGE SL_MQTT_QOS_LEVEL_1
 
 #define IS_DUPLICATE_MESSAGE 0
 #define IS_MESSAGE_RETAINED  1
 #define IS_CLEAN_SESSION     1
 
-#define LAST_WILL_TOPIC       "WISECONNECT-SDK-MQTT-CLIENT-LAST-WILL"
-#define LAST_WILL_MESSAGE     "WISECONNECT-SDK-MQTT-CLIENT has been disconnect from network"
-#define QOS_OF_LAST_WILL      1
+#define LAST_WILL_TOPIC       "Ampak/917/disconnect"
+#define LAST_WILL_MESSAGE     "Disconnected"
+#define QOS_OF_LAST_WILL      SL_MQTT_QOS_LEVEL_1
 #define IS_LAST_WILL_RETAINED 1
 
 #define ENCRYPT_CONNECTION     0
@@ -292,7 +292,7 @@ void mqtt_client_event_handler(void *client, sl_mqtt_client_event_t event, void 
         mqtt_client_cleanup();
         return;
       }
-#if 0
+#if 1
       status = sl_mqtt_client_publish(client, &message_to_be_published, 0, &message_to_be_published);
       if (status != SL_STATUS_IN_PROGRESS) {
         printf("Failed to publish message: 0x%lx\r\n", status);
