@@ -2,13 +2,13 @@
 <project name="uc.module.setup.componentSetup.com.silabs.ss.framework.project.toolchain.core.default#com.silabs.ss.tool.ide.arm.toolchain.gnu.cdt:12.2.1.20221205.gcc" propertyScope="project">
   <folder name="resources">
     <folder name="readme">
-      <file name="add_topic_name.png" linked="false" uri="studio:/sdk/extension/wiseconnect/examples/snippets/wlan/embedded_mqtt_client/resources/readme/add_topic_name.png"/>
-      <file name="application_prints_ncp.png" linked="false" uri="studio:/sdk/extension/wiseconnect/examples/snippets/wlan/embedded_mqtt_client/resources/readme/application_prints_ncp.png"/>
-      <file name="application_prints_soc.png" linked="false" uri="studio:/sdk/extension/wiseconnect/examples/snippets/wlan/embedded_mqtt_client/resources/readme/application_prints_soc.png"/>
-      <file name="connect.png" linked="false" uri="studio:/sdk/extension/wiseconnect/examples/snippets/wlan/embedded_mqtt_client/resources/readme/connect.png"/>
-      <file name="delete_connections.png" linked="false" uri="studio:/sdk/extension/wiseconnect/examples/snippets/wlan/embedded_mqtt_client/resources/readme/delete_connections.png"/>
-      <file name="mqtt_explorer_msg.png" linked="false" uri="studio:/sdk/extension/wiseconnect/examples/snippets/wlan/embedded_mqtt_client/resources/readme/mqtt_explorer_msg.png"/>
-      <file name="setup_soc_ncp.png" linked="false" uri="studio:/sdk/extension/wiseconnect/examples/snippets/wlan/embedded_mqtt_client/resources/readme/setup_soc_ncp.png"/>
+      <file name="add_topic_name.png" linked="false" uri="studio:/project/resources/readme/add_topic_name.png"/>
+      <file name="application_prints_ncp.png" linked="false" uri="studio:/project/resources/readme/application_prints_ncp.png"/>
+      <file name="application_prints_soc.png" linked="false" uri="studio:/project/resources/readme/application_prints_soc.png"/>
+      <file name="connect.png" linked="false" uri="studio:/project/resources/readme/connect.png"/>
+      <file name="delete_connections.png" linked="false" uri="studio:/project/resources/readme/delete_connections.png"/>
+      <file name="mqtt_explorer_msg.png" linked="false" uri="studio:/project/resources/readme/mqtt_explorer_msg.png"/>
+      <file name="setup_soc_ncp.png" linked="false" uri="studio:/project/resources/readme/setup_soc_ncp.png"/>
     </folder>
   </folder>
   <folder name="wiseconnect3_sdk_3.1.4">
@@ -556,11 +556,11 @@
       </folder>
     </folder>
   </folder>
-  <file name="app.c" linked="false" uri="studio:/sdk/extension/wiseconnect/examples/snippets/wlan/embedded_mqtt_client/app.c"/>
-  <file name="main.c" linked="false" uri="studio:/sdk/extension/wiseconnect/examples/snippets/wlan/embedded_mqtt_client/main.c"/>
-  <file name="app.h" linked="false" uri="studio:/sdk/extension/wiseconnect/examples/snippets/wlan/embedded_mqtt_client/app.h"/>
-  <file name="SEGGER_RTT_Conf.h" linked="false" uri="studio:/sdk/extension/wiseconnect/examples/snippets/wlan/embedded_mqtt_client/SEGGER_RTT_Conf.h"/>
-  <file name="readme.md" linked="false" uri="studio:/sdk/extension/wiseconnect/examples/snippets/wlan/embedded_mqtt_client/readme.md"/>
+  <file name="app.c" linked="false" uri="studio:/project/app.c"/>
+  <file name="main.c" linked="false" uri="studio:/project/main.c"/>
+  <file name="app.h" linked="false" uri="studio:/project/app.h"/>
+  <file name="SEGGER_RTT_Conf.h" linked="false" uri="studio:/project/SEGGER_RTT_Conf.h"/>
+  <file name="readme.md" linked="false" uri="studio:/project/readme.md"/>
   <includePath uri="studio:/project/"/>
   <includePath uri="studio:/sdk/extension/wiseconnect/components/service/bsd_socket/inc"/>
   <includePath uri="studio:/sdk/extension/wiseconnect/components/device/silabs/si91x/mcu/drivers/cmsis_driver/CMSIS/Driver/Include"/>

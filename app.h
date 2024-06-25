@@ -29,5 +29,6 @@ void mqtt_init(void);
 void app_process_action(void);
 
 void mqtt_task(void *argument);
+void mqtt_publish_message_api(char* message);
 
 #endif // APP_H

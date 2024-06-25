@@ -17,7 +17,7 @@ source:
 - {path: app.c}
 - {path: main.c}
 include:
-- path: ''
+- path: .
   file_list:
   - {path: app.h}
   - {path: SEGGER_RTT_Conf.h}

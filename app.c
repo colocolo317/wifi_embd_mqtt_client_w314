@@ -28,6 +28,7 @@
  *
  ******************************************************************************/
 
+#include <stdio.h>
 #include "sl_net.h"
 #include "sl_utility.h"
 #include "cmsis_os2.h"
@@ -47,7 +48,7 @@
 
 #define CLIENT_PORT 1
 
-#define CLIENT_ID "WISECONNECT-SDK-MQTT-CLIENT-ID"
+#define CLIENT_ID "Ampak917"
 
 #define TOPIC_TO_BE_SUBSCRIBED "Ampak/917/command"
 #define QOS_OF_SUBSCRIPTION    SL_MQTT_QOS_LEVEL_1
@@ -60,15 +61,15 @@
 #define IS_MESSAGE_RETAINED  1
 #define IS_CLEAN_SESSION     1
 
-#define LAST_WILL_TOPIC       "Ampak/917/disconnect"
-#define LAST_WILL_MESSAGE     "Disconnected"
+#define LAST_WILL_TOPIC       "Ampak/917/dismiss"
+#define LAST_WILL_MESSAGE     "disconnect"
 #define QOS_OF_LAST_WILL      SL_MQTT_QOS_LEVEL_1
 #define IS_LAST_WILL_RETAINED 1
 
 #define ENCRYPT_CONNECTION     0
 #define KEEP_ALIVE_INTERVAL    2000
 #define MQTT_CONNECT_TIMEOUT   5000
-#define MQTT_KEEPALIVE_RETRIES 0
+#define MQTT_KEEPALIVE_RETRIES 20
 
 #define SEND_CREDENTIALS 1
 
@@ -123,6 +124,8 @@ uint8_t is_execution_completed = 0;
 
 sl_mqtt_client_credentials_t *client_credentails = NULL;
 
+char mac_for_id[13] = {0};
+
 sl_mqtt_client_configuration_t mqtt_client_configuration = { .is_clean_session = IS_CLEAN_SESSION,
                                                              .client_id        = (uint8_t *)CLIENT_ID,
                                                              .client_id_length = strlen(CLIENT_ID),
@@ -166,12 +169,39 @@ void print_char_buffer(char *buffer, uint32_t buffer_length);
 sl_status_t mqtt_client_setup();
 sl_status_t mqtt_net_up(void);
 
+
 osSemaphoreId_t mqtt_sem;
 
 
 /******************************************************
  *               Function Definitions
  ******************************************************/
+void mqtt_publish_message_api(char* message)
+{
+  if(client.state == SL_MQTT_CLIENT_DISCONNECTED)
+  {
+    printf("MQTT not connected yet.\r\n");
+    return;
+  }
+  sl_status_t status;
+
+  static char message_append_mac[200] = {0};
+  memset(message_append_mac, 0, 200);
+
+  sprintf(message_append_mac, "%s : %s",message, mac_for_id);
+  message_to_be_published.content = (uint8_t *) message_append_mac;
+  message_to_be_published.content_length = strlen(message_append_mac);
+  status = sl_mqtt_client_publish(&client, &message_to_be_published, 0, &message_to_be_published);
+  if (status != SL_STATUS_IN_PROGRESS)
+  {
+    printf("Failed to publish message: 0x%lx\r\n", status);
+#if AMPAK_USE_FUNC_MQTT_CLIENT_CLEANUP
+    mqtt_client_cleanup();
+#endif
+    return;
+  }
+}
+
 
 sl_status_t mqtt_net_up(void)
 {
@@ -228,32 +258,31 @@ void mqtt_client_cleanup()
 
 void mqtt_client_message_handler(void *client, sl_mqtt_client_message_t *message, void *context)
 {
-  UNUSED_PARAMETER(context);
-
   sl_status_t status;
-  printf("Message Received on Topic: ");
-
-  print_char_buffer((char *)message->topic, message->topic_length);
-  print_char_buffer((char *)message->content, message->content_length);
-
-#if 0
-  // Unsubscribing to already subscribed topic.
-  status = sl_mqtt_client_unsubscribe(client,
-                                      (uint8_t *)TOPIC_TO_BE_SUBSCRIBED,
-                                      strlen(TOPIC_TO_BE_SUBSCRIBED),
-                                      0,
-                                      TOPIC_TO_BE_SUBSCRIBED);
-  if (status != SL_STATUS_IN_PROGRESS) {
-    printf("Failed to unsubscribe : 0x%lx\r\n", status);
-
-    mqtt_client_cleanup();
-    return;
-  }
-
-#else
+  UNUSED_PARAMETER(context);
   UNUSED_PARAMETER(client);
   UNUSED_PARAMETER(status);
-#endif
+
+  printf("Message Received on Topic: ");
+  print_char_buffer((char *)message->topic, message->topic_length);
+  printf(", Content: ");
+  print_char_buffer((char *)message->content , message->content_length);
+  printf("\r\n");
+
+  static char report[200] = {0};
+  memset(report, 0, 200);
+
+  if(strcmp((char *)message->content, "http_get") == 0)
+  {
+    sprintf(report, "Action: %s", (char *)message->content);
+    mqtt_publish_message_api(report);
+  }
+  else
+  {
+    strcpy(report, "Ack: ");
+    strncpy(report+strlen("Ack: "), (char *)message->content, message->content_length);
+    mqtt_publish_message_api(report);
+  }
 }
 
 void print_char_buffer(char *buffer, uint32_t buffer_length)
@@ -261,15 +290,15 @@ void print_char_buffer(char *buffer, uint32_t buffer_length)
   for (uint32_t index = 0; index < buffer_length; index++) {
     printf("%c", buffer[index]);
   }
-
-  printf("\r\n");
 }
 
 void mqtt_client_error_event_handler(void *client, sl_mqtt_client_error_status_t *error)
 {
   UNUSED_PARAMETER(client);
   printf("Terminating program, Error: %d\r\n", *error);
+#if AMPAK_USE_FUNC_MQTT_CLIENT_CLEANUP
   mqtt_client_cleanup();
+#endif
 }
 
 void mqtt_client_event_handler(void *client, sl_mqtt_client_event_t event, void *event_data, void *context)
@@ -293,13 +322,7 @@ void mqtt_client_event_handler(void *client, sl_mqtt_client_event_t event, void 
         return;
       }
 #if 1
-      status = sl_mqtt_client_publish(client, &message_to_be_published, 0, &message_to_be_published);
-      if (status != SL_STATUS_IN_PROGRESS) {
-        printf("Failed to publish message: 0x%lx\r\n", status);
-
-        mqtt_client_cleanup();
-        return;
-      }
+      mqtt_publish_message_api("MQTT connect ok");
 #endif
       break;
     }
@@ -310,6 +333,7 @@ void mqtt_client_event_handler(void *client, sl_mqtt_client_event_t event, void 
 
       printf("Published message successfully on topic: ");
       print_char_buffer((char *)published_message->topic, published_message->topic_length);
+      printf("\r\n");
       break;
     }
 
@@ -325,15 +349,17 @@ void mqtt_client_event_handler(void *client, sl_mqtt_client_event_t event, void 
       char *unsubscribed_topic = (char *)context;
 
       printf("Unsubscribed from topic: %s\r\n", unsubscribed_topic);
-
+#if AMPAK_MQTT_DISCONNECT_ON_UNSUBSCRIBE
       sl_mqtt_client_disconnect(client, 0);
+#endif
       break;
     }
 
     case SL_MQTT_CLIENT_DISCONNECTED_EVENT: {
       printf("Disconnected from MQTT broker\r\n");
-
+#if AMPAK_USE_FUNC_MQTT_CLIENT_CLEANUP
       mqtt_client_cleanup();
+#endif
       break;
     }
 
@@ -350,6 +376,38 @@ sl_status_t mqtt_client_setup()
 {
   sl_status_t status;
 
+  /** get mac addr for ID **/
+
+  sl_mac_address_t get_mac;
+  status = sl_wifi_get_mac_address(SL_WIFI_CLIENT_2_4GHZ_INTERFACE, &get_mac);
+  if (status != SL_STATUS_OK)
+  {
+    printf("Failed to get ap MAC: 0x%lx\r\n", status);
+    return status;
+  }
+
+  memset(mac_for_id, 0, 13);
+  char mac_str[13] = {0};
+  sprintf(mac_str, "%2x%2x%2x%2x%2x%2x"
+          ,get_mac.octet[0]
+          ,get_mac.octet[1]
+          ,get_mac.octet[2]
+          ,get_mac.octet[3]
+          ,get_mac.octet[4]
+          ,get_mac.octet[5]
+         );
+  strncpy(mac_for_id, mac_str, 12);
+
+  printf("MAC %s\r\n",mac_for_id);
+
+  mqtt_client_configuration.client_id = (uint8_t*) mac_for_id;
+  mqtt_client_configuration.client_id_length = strlen(mac_for_id);
+
+  char will_topic_append_mac[200];
+  sprintf(will_topic_append_mac,"%s/%s",last_will_message.will_topic, mac_for_id);
+  last_will_message.will_topic = (uint8_t*)will_topic_append_mac;
+  last_will_message.will_topic_length = strlen(will_topic_append_mac);
+
   if (ENCRYPT_CONNECTION) {
     // Load SSL CA certificate
     status =
@@ -364,7 +422,7 @@ sl_status_t mqtt_client_setup()
   if (SEND_CREDENTIALS) {
     uint16_t username_length, password_length;
 
-    username_length = strlen(USERNAME);
+    username_length = strlen(mac_for_id);
     password_length = strlen(PASSWORD);
 
     uint32_t malloc_size = sizeof(sl_mqtt_client_credentials_t) + username_length + password_length;
@@ -376,7 +434,7 @@ sl_status_t mqtt_client_setup()
     client_credentails->username_length = username_length;
     client_credentails->password_length = password_length;
 
-    memcpy(&client_credentails->data[0], USERNAME, username_length);
+    memcpy(&client_credentails->data[0], mac_for_id, username_length);
     memcpy(&client_credentails->data[username_length], PASSWORD, password_length);
 
     status = sl_net_set_credential(SL_NET_MQTT_CLIENT_CREDENTIAL_ID(0),
@@ -424,7 +482,7 @@ sl_status_t mqtt_client_setup()
   printf("Connect to mqtt broker Success \r\n");
 
   while (!is_execution_completed) {
-    osThreadYield();
+    osThreadYield(); // TODO: keep running in this while loop
   }
 
   printf("Example execution completed \r\n");
