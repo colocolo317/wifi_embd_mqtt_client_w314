@@ -2264,7 +2264,7 @@ END GROUP
 LOAD c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp/crtend.o
 LOAD c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp/crtn.o
 
-.text           0x08202000     0xf81d
+.text           0x08202000     0xf82d
  *(.isr_vector)
  .isr_vector    0x08202000      0x16c ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/startup_si91x.o
                 0x08202000                __Vectors
@@ -2306,350 +2306,349 @@ LOAD c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2
                 0x08202478       0xcc ./app.o
                 0x08202478                mqtt_client_event_handler
  .text.mqtt_client_setup
-                0x08202544      0x200 ./app.o
+                0x08202544      0x208 ./app.o
                 0x08202544                mqtt_client_setup
  .text.mqtt_task
-                0x08202744        0xc ./app.o
-                0x08202744                mqtt_task
+                0x0820274c        0xc ./app.o
+                0x0820274c                mqtt_task
  .text.startup.main
-                0x08202750       0x12 ./main.o
-                0x08202750                main
+                0x08202758       0x12 ./main.o
+                0x08202758                main
  .text.sl_platform_init
-                0x08202762       0x1e ./autogen/sl_event_handler.o
-                0x08202762                sl_platform_init
+                0x0820276a       0x1e ./autogen/sl_event_handler.o
+                0x0820276a                sl_platform_init
  .text.sl_kernel_start
-                0x08202780        0x4 ./autogen/sl_event_handler.o
-                0x08202780                sl_kernel_start
+                0x08202788        0x4 ./autogen/sl_event_handler.o
+                0x08202788                sl_kernel_start
  .text.sl_driver_init
-                0x08202784        0x2 ./autogen/sl_event_handler.o
-                0x08202784                sl_driver_init
+                0x0820278c        0x2 ./autogen/sl_event_handler.o
+                0x0820278c                sl_driver_init
  .text.sl_service_init
-                0x08202786        0x2 ./autogen/sl_event_handler.o
-                0x08202786                sl_service_init
+                0x0820278e        0x2 ./autogen/sl_event_handler.o
+                0x0820278e                sl_service_init
  .text.sl_stack_init
-                0x08202788        0x2 ./autogen/sl_event_handler.o
-                0x08202788                sl_stack_init
+                0x08202790        0x2 ./autogen/sl_event_handler.o
+                0x08202790                sl_stack_init
  .text.sl_internal_app_init
-                0x0820278a        0x2 ./autogen/sl_event_handler.o
-                0x0820278a                sl_internal_app_init
+                0x08202792        0x2 ./autogen/sl_event_handler.o
+                0x08202792                sl_internal_app_init
  .text.sl_slist_init
-                0x0820278c        0x6 ./gecko_sdk_4.4.1/platform/common/src/sl_slist.o
-                0x0820278c                sl_slist_init
+                0x08202794        0x6 ./gecko_sdk_4.4.1/platform/common/src/sl_slist.o
+                0x08202794                sl_slist_init
  .text.sl_slist_push
-                0x08202792        0x8 ./gecko_sdk_4.4.1/platform/common/src/sl_slist.o
-                0x08202792                sl_slist_push
+                0x0820279a        0x8 ./gecko_sdk_4.4.1/platform/common/src/sl_slist.o
+                0x0820279a                sl_slist_push
  .text.sl_slist_pop
-                0x0820279a       0x10 ./gecko_sdk_4.4.1/platform/common/src/sl_slist.o
-                0x0820279a                sl_slist_pop
+                0x082027a2       0x10 ./gecko_sdk_4.4.1/platform/common/src/sl_slist.o
+                0x082027a2                sl_slist_pop
  .text.sl_slist_remove
-                0x082027aa       0x14 ./gecko_sdk_4.4.1/platform/common/src/sl_slist.o
-                0x082027aa                sl_slist_remove
+                0x082027b2       0x14 ./gecko_sdk_4.4.1/platform/common/src/sl_slist.o
+                0x082027b2                sl_slist_remove
  .text.sli_osTaskRegisterSetValue
-                0x082027be        0xa ./gecko_sdk_4.4.1/platform/common/src/sli_cmsis_os2_ext_task_register.o
-                0x082027be                sli_osTaskRegisterSetValue
+                0x082027c6        0xa ./gecko_sdk_4.4.1/platform/common/src/sli_cmsis_os2_ext_task_register.o
+                0x082027c6                sli_osTaskRegisterSetValue
  .text.CORE_ExitCritical
-                0x082027c8        0x6 ./gecko_sdk_4.4.1/platform/emlib/src/em_core.o
-                0x082027c8                CORE_ExitCritical
+                0x082027d0        0x6 ./gecko_sdk_4.4.1/platform/emlib/src/em_core.o
+                0x082027d0                CORE_ExitCritical
  .text.CORE_EnterAtomic
-                0x082027ce        0x8 ./gecko_sdk_4.4.1/platform/emlib/src/em_core.o
-                0x082027ce                CORE_EnterAtomic
+                0x082027d6        0x8 ./gecko_sdk_4.4.1/platform/emlib/src/em_core.o
+                0x082027d6                CORE_EnterAtomic
  .text.CORE_ExitAtomic
-                0x082027d6        0x4 ./gecko_sdk_4.4.1/platform/emlib/src/em_core.o
-                0x082027d6                CORE_ExitAtomic
+                0x082027de        0x4 ./gecko_sdk_4.4.1/platform/emlib/src/em_core.o
+                0x082027de                CORE_ExitAtomic
  .text.sli_mem_pool_create
-                0x082027da       0x3c ./gecko_sdk_4.4.1/platform/service/mem_pool/src/sl_mem_pool.o
-                0x082027da                sli_mem_pool_create
+                0x082027e2       0x3c ./gecko_sdk_4.4.1/platform/service/mem_pool/src/sl_mem_pool.o
+                0x082027e2                sli_mem_pool_create
  .text.sli_mem_pool_alloc
-                0x08202816       0x24 ./gecko_sdk_4.4.1/platform/service/mem_pool/src/sl_mem_pool.o
-                0x08202816                sli_mem_pool_alloc
+                0x0820281e       0x24 ./gecko_sdk_4.4.1/platform/service/mem_pool/src/sl_mem_pool.o
+                0x0820281e                sli_mem_pool_alloc
  .text.sli_mem_pool_free
-                0x0820283a       0x18 ./gecko_sdk_4.4.1/platform/service/mem_pool/src/sl_mem_pool.o
-                0x0820283a                sli_mem_pool_free
+                0x08202842       0x18 ./gecko_sdk_4.4.1/platform/service/mem_pool/src/sl_mem_pool.o
+                0x08202842                sli_mem_pool_free
  .text.sl_system_init
-                0x08202852       0x1a ./gecko_sdk_4.4.1/platform/service/system/src/sl_system_init.o
-                0x08202852                sl_system_init
+                0x0820285a       0x1a ./gecko_sdk_4.4.1/platform/service/system/src/sl_system_init.o
+                0x0820285a                sl_system_init
  .text.sl_system_kernel_start
-                0x0820286c        0x4 ./gecko_sdk_4.4.1/platform/service/system/src/sl_system_kernel.o
-                0x0820286c                sl_system_kernel_start
+                0x08202874        0x4 ./gecko_sdk_4.4.1/platform/service/system/src/sl_system_kernel.o
+                0x08202874                sl_system_kernel_start
  .text.SysTick_Handler
-                0x08202870       0x1a ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
-                0x08202870                SysTick_Handler
- *fill*         0x0820288a        0x2 
+                0x08202878       0x1a ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
+                0x08202878                SysTick_Handler
+ *fill*         0x08202892        0x2 
  .text.osKernelInitialize
-                0x0820288c       0x34 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
-                0x0820288c                osKernelInitialize
+                0x08202894       0x34 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
+                0x08202894                osKernelInitialize
  .text.osKernelStart
-                0x082028c0       0x48 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
-                0x082028c0                osKernelStart
+                0x082028c8       0x48 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
+                0x082028c8                osKernelStart
  .text.osKernelGetTickCount
-                0x08202908       0x28 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
-                0x08202908                osKernelGetTickCount
+                0x08202910       0x28 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
+                0x08202910                osKernelGetTickCount
  .text.osThreadNew
-                0x08202930       0xa8 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
-                0x08202930                osThreadNew
+                0x08202938       0xa8 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
+                0x08202938                osThreadNew
  .text.osThreadYield
-                0x082029d8       0x3c ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
-                0x082029d8                osThreadYield
- .text.osDelay  0x08202a14       0x30 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
-                0x08202a14                osDelay
+                0x082029e0       0x3c ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
+                0x082029e0                osThreadYield
+ .text.osDelay  0x08202a1c       0x30 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
+                0x08202a1c                osDelay
  .text.osEventFlagsNew
-                0x08202a44       0x3c ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
-                0x08202a44                osEventFlagsNew
+                0x08202a4c       0x3c ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
+                0x08202a4c                osEventFlagsNew
  .text.osEventFlagsSet
-                0x08202a80       0x70 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
-                0x08202a80                osEventFlagsSet
+                0x08202a88       0x70 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
+                0x08202a88                osEventFlagsSet
  .text.osEventFlagsClear
-                0x08202af0       0x5c ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
-                0x08202af0                osEventFlagsClear
+                0x08202af8       0x5c ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
+                0x08202af8                osEventFlagsClear
  .text.osEventFlagsGet
-                0x08202b4c       0x34 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
-                0x08202b4c                osEventFlagsGet
+                0x08202b54       0x34 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
+                0x08202b54                osEventFlagsGet
  .text.osEventFlagsWait
-                0x08202b80       0x70 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
-                0x08202b80                osEventFlagsWait
+                0x08202b88       0x70 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
+                0x08202b88                osEventFlagsWait
  .text.osMutexNew
-                0x08202bf0       0x94 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
-                0x08202bf0                osMutexNew
+                0x08202bf8       0x94 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
+                0x08202bf8                osMutexNew
  .text.osMutexAcquire
-                0x08202c84       0x60 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
-                0x08202c84                osMutexAcquire
+                0x08202c8c       0x60 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
+                0x08202c8c                osMutexAcquire
  .text.osMutexRelease
-                0x08202ce4       0x58 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
-                0x08202ce4                osMutexRelease
+                0x08202cec       0x58 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
+                0x08202cec                osMutexRelease
  .text.osSemaphoreNew
-                0x08202d3c       0xb0 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
-                0x08202d3c                osSemaphoreNew
+                0x08202d44       0xb0 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
+                0x08202d44                osSemaphoreNew
  .text.vApplicationGetIdleTaskMemory
-                0x08202dec       0x18 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
-                0x08202dec                vApplicationGetIdleTaskMemory
+                0x08202df4       0x18 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
+                0x08202df4                vApplicationGetIdleTaskMemory
  .text.vApplicationGetTimerTaskMemory
-                0x08202e04       0x18 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
-                0x08202e04                vApplicationGetTimerTaskMemory
+                0x08202e0c       0x18 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
+                0x08202e0c                vApplicationGetTimerTaskMemory
  .text.xEventGroupCreateStatic
-                0x08202e1c       0x48 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
-                0x08202e1c                xEventGroupCreateStatic
+                0x08202e24       0x48 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
+                0x08202e24                xEventGroupCreateStatic
  .text.xEventGroupCreate
-                0x08202e64       0x1c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
-                0x08202e64                xEventGroupCreate
+                0x08202e6c       0x1c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
+                0x08202e6c                xEventGroupCreate
  .text.xEventGroupWaitBits
-                0x08202e80      0x130 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
-                0x08202e80                xEventGroupWaitBits
+                0x08202e88      0x130 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
+                0x08202e88                xEventGroupWaitBits
  .text.xEventGroupClearBits
-                0x08202fb0       0x46 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
-                0x08202fb0                xEventGroupClearBits
+                0x08202fb8       0x46 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
+                0x08202fb8                xEventGroupClearBits
  .text.vEventGroupClearBitsCallback
-                0x08202ff6        0x4 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
-                0x08202ff6                vEventGroupClearBitsCallback
- *fill*         0x08202ffa        0x2 
+                0x08202ffe        0x4 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
+                0x08202ffe                vEventGroupClearBitsCallback
+ *fill*         0x08203002        0x2 
  .text.xEventGroupClearBitsFromISR
-                0x08202ffc       0x10 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
-                0x08202ffc                xEventGroupClearBitsFromISR
+                0x08203004       0x10 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
+                0x08203004                xEventGroupClearBitsFromISR
  .text.xEventGroupGetBitsFromISR
-                0x0820300c       0x1c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
-                0x0820300c                xEventGroupGetBitsFromISR
+                0x08203014       0x1c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
+                0x08203014                xEventGroupGetBitsFromISR
  .text.xEventGroupSetBits
-                0x08203028       0x88 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
-                0x08203028                xEventGroupSetBits
+                0x08203030       0x88 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
+                0x08203030                xEventGroupSetBits
  .text.vEventGroupSetBitsCallback
-                0x082030b0        0x4 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
-                0x082030b0                vEventGroupSetBitsCallback
+                0x082030b8        0x4 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
+                0x082030b8                vEventGroupSetBitsCallback
  .text.xEventGroupSetBitsFromISR
-                0x082030b4       0x10 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
-                0x082030b4                xEventGroupSetBitsFromISR
+                0x082030bc       0x10 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
+                0x082030bc                xEventGroupSetBitsFromISR
  .text.vListInitialise
-                0x082030c4       0x16 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/list.o
-                0x082030c4                vListInitialise
+                0x082030cc       0x16 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/list.o
+                0x082030cc                vListInitialise
  .text.vListInitialiseItem
-                0x082030da        0x6 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/list.o
-                0x082030da                vListInitialiseItem
+                0x082030e2        0x6 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/list.o
+                0x082030e2                vListInitialiseItem
  .text.vListInsertEnd
-                0x082030e0       0x16 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/list.o
-                0x082030e0                vListInsertEnd
+                0x082030e8       0x16 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/list.o
+                0x082030e8                vListInsertEnd
  .text.vListInsert
-                0x082030f6       0x2e ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/list.o
-                0x082030f6                vListInsert
+                0x082030fe       0x2e ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/list.o
+                0x082030fe                vListInsert
  .text.uxListRemove
-                0x08203124       0x20 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/list.o
-                0x08203124                uxListRemove
+                0x0820312c       0x20 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/list.o
+                0x0820312c                uxListRemove
  .text.prvIsQueueEmpty
-                0x08203144       0x16 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+                0x0820314c       0x16 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
  .text.prvCopyDataToQueue
-                0x0820315a       0x66 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+                0x08203162       0x66 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
  .text.prvCopyDataFromQueue
-                0x082031c0       0x2c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+                0x082031c8       0x2c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
  .text.prvUnlockQueue
-                0x082031ec       0x70 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+                0x082031f4       0x70 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
  .text.xQueueGenericReset
-                0x0820325c       0x7e ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
-                0x0820325c                xQueueGenericReset
+                0x08203264       0x7e ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+                0x08203264                xQueueGenericReset
  .text.xQueueGenericCreate.part.0
-                0x082032da       0x7a ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+                0x082032e2       0x7a ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
  .text.xQueueGenericCreateStatic
-                0x08203354       0xa6 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
-                0x08203354                xQueueGenericCreateStatic
+                0x0820335c       0xa6 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+                0x0820335c                xQueueGenericCreateStatic
  .text.xQueueGenericCreate
-                0x082033fa       0x18 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
-                0x082033fa                xQueueGenericCreate
+                0x08203402       0x18 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+                0x08203402                xQueueGenericCreate
  .text.xQueueCreateCountingSemaphoreStatic
-                0x08203412       0x44 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
-                0x08203412                xQueueCreateCountingSemaphoreStatic
+                0x0820341a       0x44 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+                0x0820341a                xQueueCreateCountingSemaphoreStatic
  .text.xQueueCreateCountingSemaphore
-                0x08203456       0x3c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
-                0x08203456                xQueueCreateCountingSemaphore
+                0x0820345e       0x3c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+                0x0820345e                xQueueCreateCountingSemaphore
  .text.xQueueGenericSend
-                0x08203492      0x178 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
-                0x08203492                xQueueGenericSend
+                0x0820349a      0x178 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+                0x0820349a                xQueueGenericSend
  .text.xQueueCreateMutexStatic
-                0x0820360a       0x2a ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
-                0x0820360a                xQueueCreateMutexStatic
+                0x08203612       0x2a ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+                0x08203612                xQueueCreateMutexStatic
  .text.xQueueGiveMutexRecursive
-                0x08203634       0x3e ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
-                0x08203634                xQueueGiveMutexRecursive
+                0x0820363c       0x3e ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+                0x0820363c                xQueueGiveMutexRecursive
  .text.xQueueCreateMutex
-                0x08203672       0x24 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
-                0x08203672                xQueueCreateMutex
+                0x0820367a       0x24 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+                0x0820367a                xQueueCreateMutex
  .text.xQueueGenericSendFromISR
-                0x08203696       0xd0 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
-                0x08203696                xQueueGenericSendFromISR
+                0x0820369e       0xd0 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+                0x0820369e                xQueueGenericSendFromISR
  .text.xQueueReceive
-                0x08203766      0x13e ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
-                0x08203766                xQueueReceive
+                0x0820376e      0x13e ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+                0x0820376e                xQueueReceive
  .text.xQueueSemaphoreTake
-                0x082038a4      0x17a ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
-                0x082038a4                xQueueSemaphoreTake
+                0x082038ac      0x17a ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+                0x082038ac                xQueueSemaphoreTake
  .text.xQueueTakeMutexRecursive
-                0x08203a1e       0x42 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
-                0x08203a1e                xQueueTakeMutexRecursive
+                0x08203a26       0x42 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+                0x08203a26                xQueueTakeMutexRecursive
  .text.vQueueAddToRegistry
-                0x08203a60       0x24 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
-                0x08203a60                vQueueAddToRegistry
+                0x08203a68       0x24 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+                0x08203a68                vQueueAddToRegistry
  .text.vQueueUnregisterQueue
-                0x08203a84       0x30 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
-                0x08203a84                vQueueUnregisterQueue
+                0x08203a8c       0x30 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+                0x08203a8c                vQueueUnregisterQueue
  .text.vQueueDelete
-                0x08203ab4       0x2a ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
-                0x08203ab4                vQueueDelete
+                0x08203abc       0x2a ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+                0x08203abc                vQueueDelete
  .text.vQueueWaitForMessageRestricted
-                0x08203ade       0x46 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
-                0x08203ade                vQueueWaitForMessageRestricted
+                0x08203ae6       0x46 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+                0x08203ae6                vQueueWaitForMessageRestricted
  .text.prvAddNewTaskToReadyList
-                0x08203b24      0x100 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x08203b2c      0x100 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
  .text.prvAddCurrentTaskToDelayedList
-                0x08203c24       0x78 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x08203c2c       0x78 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
  .text.prvResetNextTaskUnblockTime
-                0x08203c9c       0x24 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x08203ca4       0x24 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
  .text.prvDeleteTCB
-                0x08203cc0       0x36 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
- *fill*         0x08203cf6        0x2 
+                0x08203cc8       0x36 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+ *fill*         0x08203cfe        0x2 
  .text.prvIdleTask
-                0x08203cf8       0x60 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x08203d00       0x60 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
  .text.prvInitialiseNewTask.constprop.0
-                0x08203d58       0xb0 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x08203d60       0xb0 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
  .text.xTaskCreateStatic
-                0x08203e08       0x70 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x08203e08                xTaskCreateStatic
+                0x08203e10       0x70 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x08203e10                xTaskCreateStatic
  .text.xTaskCreate
-                0x08203e78       0x5c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x08203e78                xTaskCreate
+                0x08203e80       0x5c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x08203e80                xTaskCreate
  .text.vTaskStartScheduler
-                0x08203ed4       0x90 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x08203ed4                vTaskStartScheduler
+                0x08203edc       0x90 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x08203edc                vTaskStartScheduler
  .text.vTaskSuspendAll
-                0x08203f64       0x10 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x08203f64                vTaskSuspendAll
+                0x08203f6c       0x10 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x08203f6c                vTaskSuspendAll
  .text.xTaskGetTickCount
-                0x08203f74        0xc ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x08203f74                xTaskGetTickCount
+                0x08203f7c        0xc ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x08203f7c                xTaskGetTickCount
  .text.xTaskGetTickCountFromISR
-                0x08203f80       0x10 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x08203f80                xTaskGetTickCountFromISR
+                0x08203f88       0x10 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x08203f88                xTaskGetTickCountFromISR
  .text.xTaskIncrementTick
-                0x08203f90      0x12c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x08203f90                xTaskIncrementTick
+                0x08203f98      0x12c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x08203f98                xTaskIncrementTick
  .text.xTaskResumeAll
-                0x082040bc       0xe8 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x082040bc                xTaskResumeAll
+                0x082040c4       0xe8 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x082040c4                xTaskResumeAll
  .text.vTaskDelay
-                0x082041a4       0x48 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x082041a4                vTaskDelay
+                0x082041ac       0x48 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x082041ac                vTaskDelay
  .text.vTaskSwitchContext
-                0x082041ec       0x88 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x082041ec                vTaskSwitchContext
+                0x082041f4       0x88 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x082041f4                vTaskSwitchContext
  .text.vTaskPlaceOnEventList
-                0x08204274       0x34 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x08204274                vTaskPlaceOnEventList
+                0x0820427c       0x34 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x0820427c                vTaskPlaceOnEventList
  .text.vTaskPlaceOnUnorderedEventList
-                0x082042a8       0x58 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x082042a8                vTaskPlaceOnUnorderedEventList
+                0x082042b0       0x58 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x082042b0                vTaskPlaceOnUnorderedEventList
  .text.vTaskPlaceOnEventListRestricted
-                0x08204300       0x3c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x08204300                vTaskPlaceOnEventListRestricted
+                0x08204308       0x3c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x08204308                vTaskPlaceOnEventListRestricted
  .text.xTaskRemoveFromEventList
-                0x0820433c       0x80 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x0820433c                xTaskRemoveFromEventList
+                0x08204344       0x80 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x08204344                xTaskRemoveFromEventList
  .text.vTaskRemoveFromUnorderedEventList
-                0x082043bc       0x84 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x082043bc                vTaskRemoveFromUnorderedEventList
+                0x082043c4       0x84 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x082043c4                vTaskRemoveFromUnorderedEventList
  .text.vTaskInternalSetTimeOutState
-                0x08204440       0x18 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x08204440                vTaskInternalSetTimeOutState
+                0x08204448       0x18 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x08204448                vTaskInternalSetTimeOutState
  .text.xTaskCheckForTimeOut
-                0x08204458       0x90 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x08204458                xTaskCheckForTimeOut
+                0x08204460       0x90 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x08204460                xTaskCheckForTimeOut
  .text.vTaskMissedYield
-                0x082044e8        0xc ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x082044e8                vTaskMissedYield
+                0x082044f0        0xc ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x082044f0                vTaskMissedYield
  .text.vTaskSetThreadLocalStoragePointer
-                0x082044f4       0x2c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x082044f4                vTaskSetThreadLocalStoragePointer
+                0x082044fc       0x2c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x082044fc                vTaskSetThreadLocalStoragePointer
  .text.xTaskGetCurrentTaskHandle
-                0x08204520        0xc ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x08204520                xTaskGetCurrentTaskHandle
+                0x08204528        0xc ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x08204528                xTaskGetCurrentTaskHandle
  .text.xTaskGetSchedulerState
-                0x0820452c       0x20 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x0820452c                xTaskGetSchedulerState
+                0x08204534       0x20 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x08204534                xTaskGetSchedulerState
  .text.xTaskPriorityInherit
-                0x0820454c       0x7c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x0820454c                xTaskPriorityInherit
+                0x08204554       0x7c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x08204554                xTaskPriorityInherit
  .text.xTaskPriorityDisinherit
-                0x082045c8       0x84 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x082045c8                xTaskPriorityDisinherit
+                0x082045d0       0x84 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x082045d0                xTaskPriorityDisinherit
  .text.vTaskPriorityDisinheritAfterTimeout
-                0x0820464c       0x9c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x0820464c                vTaskPriorityDisinheritAfterTimeout
+                0x08204654       0x9c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x08204654                vTaskPriorityDisinheritAfterTimeout
  .text.uxTaskResetEventItemValue
-                0x082046e8       0x18 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x082046e8                uxTaskResetEventItemValue
+                0x082046f0       0x18 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x082046f0                uxTaskResetEventItemValue
  .text.pvTaskIncrementMutexHeldCount
-                0x08204700       0x18 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
-                0x08204700                pvTaskIncrementMutexHeldCount
+                0x08204708       0x18 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x08204708                pvTaskIncrementMutexHeldCount
  .text.prvInsertTimerInActiveList
-                0x08204718       0x3c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
+                0x08204720       0x3c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
  .text.prvCheckForValidListAndQueue
-                0x08204754       0x68 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
+                0x0820475c       0x68 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
  .text.xTimerCreateTimerTask
-                0x082047bc       0x64 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
-                0x082047bc                xTimerCreateTimerTask
+                0x082047c4       0x64 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
+                0x082047c4                xTimerCreateTimerTask
  .text.xTimerGenericCommand
-                0x08204820       0x58 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
-                0x08204820                xTimerGenericCommand
+                0x08204828       0x58 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
+                0x08204828                xTimerGenericCommand
  .text.prvSampleTimeNow
-                0x08204878       0xa4 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
+                0x08204880       0xa4 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
  .text.prvTimerTask
-                0x0820491c      0x1cc ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
+                0x08204924      0x1cc ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
  .text.xTimerPendFunctionCallFromISR
-                0x08204ae8       0x28 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
-                0x08204ae8                xTimerPendFunctionCallFromISR
+                0x08204af0       0x28 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
+                0x08204af0                xTimerPendFunctionCallFromISR
  .text.prvPortStartFirstTask
-                0x08204b10       0x28 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/portable/GCC/ARM_CM4F/port.o
+                0x08204b18       0x28 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/portable/GCC/ARM_CM4F/port.o
  .text.vPortEnableVFP
-                0x08204b38       0x14 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/portable/GCC/ARM_CM4F/port.o
+                0x08204b40       0x14 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/portable/GCC/ARM_CM4F/port.o
  .text.prvTaskExitError
-                0x08204b4c       0x40 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/portable/GCC/ARM_CM4F/port.o
+                0x08204b54       0x40 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/portable/GCC/ARM_CM4F/port.o
  .text.pxPortInitialiseStack
-                0x08204b8c       0x2c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/portable/GCC/ARM_CM4F/port.o
-                0x08204b8c                pxPortInitialiseStack
- *fill*         0x08204bb8        0x8 
+                0x08204b94       0x2c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/portable/GCC/ARM_CM4F/port.o
+                0x08204b94                pxPortInitialiseStack
  .text.SVC_Handler
                 0x08204bc0       0x24 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/portable/GCC/ARM_CM4F/port.o
                 0x08204bc0                SVC_Handler
@@ -3807,212 +3806,213 @@ LOAD c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2
  .rodata.mqtt_client_event_handler.str1.1
                 0x0821059f      0x109 ./app.o
  .rodata.mqtt_client_setup.str1.1
-                0x082106a8      0x15d ./app.o
+                0x082106a8      0x169 ./app.o
  .rodata.str1.1
-                0x08210805       0x4c ./app.o
- *fill*         0x08210851        0x3 
+                0x08210811       0x4c ./app.o
+ *fill*         0x0821085d        0x3 
  .rodata.wifi_mqtt_client_configuration
-                0x08210854       0x38 ./app.o
+                0x08210860       0x38 ./app.o
  .rodata.mqtt_thread_attributes
-                0x0821088c       0x24 ./app.o
-                0x0821088c                mqtt_thread_attributes
+                0x08210898       0x24 ./app.o
+                0x08210898                mqtt_thread_attributes
  .rodata.vTaskStartScheduler.str1.1
-                0x082108b0        0x5 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+                0x082108bc        0x5 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
  .rodata.prvCheckForValidListAndQueue.str1.1
-                0x082108b5        0x5 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
+                0x082108c1        0x5 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
  .rodata.xTimerCreateTimerTask.str1.1
-                0x082108ba        0x8 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
- *fill*         0x082108c2        0x2 
+                0x082108c6        0x8 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
+ *fill*         0x082108ce        0x2 
  .rodata.Driver_ULP_UART
-                0x082108c4       0x38 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
-                0x082108c4                Driver_ULP_UART
+                0x082108d0       0x38 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
+                0x082108d0                Driver_ULP_UART
  .rodata.ulp_uart_rts
-                0x082108fc        0x4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
- .rodata.ulp_uart_cts
-                0x08210900        0x4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
- .rodata.ulp_uart_rx
-                0x08210904        0x4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
- .rodata.ulp_uart_tx
                 0x08210908        0x4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
- .rodata.uart1_rts
+ .rodata.ulp_uart_cts
                 0x0821090c        0x4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
- .rodata.uart1_cts
+ .rodata.ulp_uart_rx
                 0x08210910        0x4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
- .rodata.uart1_rx
+ .rodata.ulp_uart_tx
                 0x08210914        0x4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
- .rodata.uart1_tx
+ .rodata.uart1_rts
                 0x08210918        0x4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
- .rodata.usart0_ir_rx
+ .rodata.uart1_cts
                 0x0821091c        0x4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
- .rodata.usart0_ir_tx
+ .rodata.uart1_rx
                 0x08210920        0x4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
- .rodata.usart0_rts
+ .rodata.uart1_tx
                 0x08210924        0x4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
- .rodata.usart0_cts
+ .rodata.usart0_ir_rx
                 0x08210928        0x4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
- .rodata.usart0_rx
+ .rodata.usart0_ir_tx
                 0x0821092c        0x4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
- .rodata.usart0_tx
+ .rodata.usart0_rts
                 0x08210930        0x4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
- .rodata.usart0_clock
+ .rodata.usart0_cts
                 0x08210934        0x4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
- .rodata.UsartDriverVersion
+ .rodata.usart0_rx
                 0x08210938        0x4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
+ .rodata.usart0_tx
+                0x0821093c        0x4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
+ .rodata.usart0_clock
+                0x08210940        0x4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
+ .rodata.UsartDriverVersion
+                0x08210944        0x4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
  .rodata.sli_m4_interrupt_isr.str1.1
-                0x0821093c       0xbb ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/rsi_hal_mcu_m4_rom.o
+                0x08210948       0xbb ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/rsi_hal_mcu_m4_rom.o
  .rodata.__func__.0
-                0x082109f7       0x15 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/rsi_hal_mcu_m4_rom.o
+                0x08210a03       0x15 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/rsi_hal_mcu_m4_rom.o
  .rodata.CSWTCH.5
-                0x08210a0c       0x1d ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_platform.o
+                0x08210a18       0x1d ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_platform.o
  .rodata.sl_si91x_trigger_sleep.str1.1
-                0x08210a29       0x1e ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_platform_wireless.o
+                0x08210a35       0x1e ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_platform_wireless.o
  .rodata.sli_si91x_submit_rx_pkt.str1.1
-                0x08210a47       0xc4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_si91x_bus.o
+                0x08210a53       0xc4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_si91x_bus.o
  .rodata.sli_si91x_config_m4_dma_desc_on_reset.str1.1
-                0x08210b0b       0x25 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_si91x_bus.o
+                0x08210b17       0x25 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_si91x_bus.o
  .rodata.__func__.0
-                0x08210b30       0x26 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_si91x_bus.o
+                0x08210b3c       0x26 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_si91x_bus.o
  .rodata.__func__.1
-                0x08210b56       0x18 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_si91x_bus.o
+                0x08210b62       0x18 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_si91x_bus.o
  .rodata.sl_net_si91x_event_dispatch_handler.str1.1
-                0x08210b6e      0x132 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_net_si91x_integration_handler.o
+                0x08210b7a      0x132 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_net_si91x_integration_handler.o
  .rodata.__func__.0
-                0x08210ca0       0x21 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_net_si91x_integration_handler.o
+                0x08210cac       0x21 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_net_si91x_integration_handler.o
  .rodata.__func__.1
-                0x08210cc1       0x24 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_net_si91x_integration_handler.o
+                0x08210ccd       0x24 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_net_si91x_integration_handler.o
  .rodata.sl_si91x_platform_init.str1.1
-                0x08210ce5       0x16 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_rsi_utility.o
+                0x08210cf1       0x16 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_rsi_utility.o
  .rodata.sl_si91x_driver_wait_for_response_packet.str1.1
-                0x08210cfb       0xb5 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_driver.o
+                0x08210d07       0xb5 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_driver.o
  .rodata.sl_si91x_set_device_region.str1.1
-                0x08210db0       0x14 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_driver.o
+                0x08210dbc       0x14 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_driver.o
  .rodata.__func__.3
-                0x08210dc4       0x29 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_driver.o
- *fill*         0x08210ded        0x3 
+                0x08210dd0       0x29 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_driver.o
+ *fill*         0x08210df9        0x3 
  .rodata.response_event_map
-                0x08210df0       0x14 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_driver.o
+                0x08210dfc       0x14 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_driver.o
  .rodata.firmware_queue_id
-                0x08210e04        0x5 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_driver.o
- *fill*         0x08210e09        0x3 
- .rodata        0x08210e0c       0x10 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_driver.o
+                0x08210e10        0x5 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_driver.o
+ *fill*         0x08210e15        0x3 
+ .rodata        0x08210e18       0x10 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_driver.o
  .rodata.sl_create_generic_rx_packet_from_params.str1.1
-                0x08210e1c       0x95 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/threading/sli_si91x_multithreaded.o
+                0x08210e28       0x95 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/threading/sli_si91x_multithreaded.o
                                  0xc7 (size before relaxing)
  .rodata.si91x_bus_thread.str1.1
-                0x08210eb1       0xcd ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/threading/sli_si91x_multithreaded.o
+                0x08210ebd       0xcd ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/threading/sli_si91x_multithreaded.o
  .rodata.__func__.0
-                0x08210f7e       0x10 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/threading/sli_si91x_multithreaded.o
+                0x08210f8a       0x10 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/threading/sli_si91x_multithreaded.o
  .rodata.__func__.1
-                0x08210f8e       0x11 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/threading/sli_si91x_multithreaded.o
+                0x08210f9a       0x11 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/threading/sli_si91x_multithreaded.o
  .rodata.__func__.2
-                0x08210f9f       0x28 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/threading/sli_si91x_multithreaded.o
+                0x08210fab       0x28 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/threading/sli_si91x_multithreaded.o
  .rodata.sl_wifi_connect.str1.1
-                0x08210fc7       0x1f ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/si91x/sl_wifi.o
+                0x08210fd3       0x1f ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/si91x/sl_wifi.o
                                  0x24 (size before relaxing)
  .rodata.sl_wifi_btr_set_channel.str1.1
-                0x08210fe6       0xc1 ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/si91x/sl_wifi.o
+                0x08210ff2       0xc1 ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/si91x/sl_wifi.o
  .rodata.sl_wifi_btr_up.str1.1
-                0x082110a7      0x1fd ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/si91x/sl_wifi.o
+                0x082110b3      0x1fd ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/si91x/sl_wifi.o
  .rodata.__func__.0
-                0x082112a4        0xf ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/si91x/sl_wifi.o
+                0x082112b0        0xf ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/si91x/sl_wifi.o
  .rodata.__func__.1
-                0x082112b3       0x1a ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/si91x/sl_wifi.o
+                0x082112bf       0x1a ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/si91x/sl_wifi.o
  .rodata.__func__.2
-                0x082112cd       0x18 ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/si91x/sl_wifi.o
+                0x082112d9       0x18 ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/si91x/sl_wifi.o
  .rodata.sli_si91x_get_subscription.isra.0.str1.1
-                0x082112e5        0x2 ./wiseconnect3_sdk_3.1.4/components/service/mqtt/si91x/sl_mqtt_client.o
+                0x082112f1        0x2 ./wiseconnect3_sdk_3.1.4/components/service/mqtt/si91x/sl_mqtt_client.o
  .rodata.sl_mqtt_client_deinit.str1.1
-                0x082112e7       0x92 ./wiseconnect3_sdk_3.1.4/components/service/mqtt/si91x/sl_mqtt_client.o
+                0x082112f3       0x92 ./wiseconnect3_sdk_3.1.4/components/service/mqtt/si91x/sl_mqtt_client.o
  .rodata.sli_si91x_mqtt_event_handler.str1.1
-                0x08211379       0x47 ./wiseconnect3_sdk_3.1.4/components/service/mqtt/si91x/sl_mqtt_client.o
+                0x08211385       0x47 ./wiseconnect3_sdk_3.1.4/components/service/mqtt/si91x/sl_mqtt_client.o
  .rodata.CSWTCH.49
-                0x082113c0        0x6 ./wiseconnect3_sdk_3.1.4/components/service/mqtt/si91x/sl_mqtt_client.o
+                0x082113cc        0x6 ./wiseconnect3_sdk_3.1.4/components/service/mqtt/si91x/sl_mqtt_client.o
  .rodata.__func__.0
-                0x082113c6       0x1d ./wiseconnect3_sdk_3.1.4/components/service/mqtt/si91x/sl_mqtt_client.o
- *fill*         0x082113e3        0x1 
+                0x082113d2       0x1d ./wiseconnect3_sdk_3.1.4/components/service/mqtt/si91x/sl_mqtt_client.o
+ *fill*         0x082113ef        0x1 
  .rodata.sl_wifi_default_btr_configuration
-                0x082113e4       0x38 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net.o
+                0x082113f0       0x38 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net.o
  .rodata.sl_wifi_default_ap_configuration
-                0x0821141c       0x38 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net.o
+                0x08211428       0x38 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net.o
  .rodata.sl_wifi_default_client_configuration
-                0x08211454       0x38 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net.o
- .rodata        0x0821148c       0x20 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net.o
+                0x08211460       0x38 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net.o
+ .rodata        0x08211498       0x20 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net.o
  .rodata._ctype_
-                0x082114ac      0x101 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-ctype_.o)
-                0x082114ac                _ctype_
+                0x082114b8      0x101 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-ctype_.o)
+                0x082114b8                _ctype_
  .rodata._printf_float.str1.1
-                0x082115ad       0x12 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfprintf_float.o)
+                0x082115b9       0x12 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfprintf_float.o)
  .rodata._printf_i.str1.1
-                0x082115bf       0x22 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x082115cb       0x22 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfprintf_i.o)
  .rodata._dtoa_r.str1.1
-                0x082115e1       0x8e c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-dtoa.o)
+                0x082115ed       0x8e c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-dtoa.o)
                                  0x90 (size before relaxing)
  .rodata._Balloc.str1.1
-                0x0821166f       0x5a c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-mprec.o)
+                0x0821167b       0x5a c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-mprec.o)
                                  0x71 (size before relaxing)
  .rodata.__multadd.str1.1
-                0x082116c9       0x11 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-mprec.o)
- *fill*         0x082116c9        0x3 
- .rodata.p05.0  0x082116cc        0xc c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-mprec.o)
+                0x082116d5       0x11 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-mprec.o)
+ *fill*         0x082116d5        0x3 
+ .rodata.p05.0  0x082116d8        0xc c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-mprec.o)
+ *fill*         0x082116e4        0x4 
  .rodata.__mprec_bigtens
-                0x082116d8       0x28 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-mprec.o)
-                0x082116d8                __mprec_bigtens
+                0x082116e8       0x28 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-mprec.o)
+                0x082116e8                __mprec_bigtens
  .rodata.__mprec_tens
-                0x08211700       0xc8 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-mprec.o)
-                0x08211700                __mprec_tens
+                0x08211710       0xc8 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-mprec.o)
+                0x08211710                __mprec_tens
  .rodata._svfprintf_r.str1.1
-                0x082117c8       0x11 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfprintf.o)
+                0x082117d8       0x11 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-svfprintf.o)
  .rodata._vfprintf_r.str1.1
-                0x082117d9       0x11 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfprintf.o)
+                0x082117e9       0x11 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-nano-vfprintf.o)
  .rodata._setlocale_r.str1.1
-                0x082117d9        0x8 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-locale.o)
+                0x082117e9        0x8 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-locale.o)
                                   0x9 (size before relaxing)
  .rodata.str1.1
-                0x082117e1        0x8 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-locale.o)
+                0x082117f1        0x8 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-locale.o)
                                   0x2 (size before relaxing)
  .rodata.__assert_func.str1.1
-                0x082117e1       0x3c c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-assert.o)
+                0x082117f1       0x3c c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp\libc_nano.a(libc_a-assert.o)
                                  0x3d (size before relaxing)
  *(.eh_fram e*)
 
-.eh_frame       0x08211820        0x0
- .eh_frame      0x08211820        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
+.eh_frame       0x08211830        0x0
+ .eh_frame      0x08211830        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
 
-.glue_7         0x08211820        0x0
- .glue_7        0x08211820        0x0 linker stubs
+.glue_7         0x08211830        0x0
+ .glue_7        0x08211830        0x0 linker stubs
 
-.glue_7t        0x08211820        0x0
- .glue_7t       0x08211820        0x0 linker stubs
+.glue_7t        0x08211830        0x0
+ .glue_7t       0x08211830        0x0 linker stubs
 
-.vfp11_veneer   0x08211820        0x0
- .vfp11_veneer  0x08211820        0x0 linker stubs
+.vfp11_veneer   0x08211830        0x0
+ .vfp11_veneer  0x08211830        0x0 linker stubs
 
-.v4_bx          0x08211820        0x0
- .v4_bx         0x08211820        0x0 linker stubs
+.v4_bx          0x08211830        0x0
+ .v4_bx         0x08211830        0x0 linker stubs
 
-.iplt           0x08211820        0x0
- .iplt          0x08211820        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
+.iplt           0x08211830        0x0
+ .iplt          0x08211830        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
 
 .common_tcm_code
-                0x08211820      0x21c
+                0x08211830      0x21c
  .common_tcm_code
-                0x08211820      0x21c ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/iPMU_prog/iPMU_dotc/ipmu_apis.o
-                0x08211820                update_ipmu_calib_data
+                0x08211830      0x21c ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/iPMU_prog/iPMU_dotc/ipmu_apis.o
+                0x08211830                update_ipmu_calib_data
 
-.rel.dyn        0x08211a3c        0x0
- .rel.iplt      0x08211a3c        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
+.rel.dyn        0x08211a4c        0x0
+ .rel.iplt      0x08211a4c        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08211a3c                __exidx_start = .
+                0x08211a4c                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x08211a3c                __exidx_end = .
-                0x08211a3c                __etext = .
-                0x08211a3c                _sidata = __etext
+                0x08211a4c                __exidx_end = .
+                0x08211a4c                __etext = .
+                0x08211a4c                _sidata = __etext
 
-.data           0x0000000c      0x864 load address 0x08211a3c
+.data           0x0000000c      0x864 load address 0x08211a4c
                 0x0000000c                __data_start__ = .
                 0x0000000c                _sdata = __data_start__
  *(.data*)
@@ -4236,16 +4236,16 @@ LOAD c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2
                 0x00000870                _edata = __data_end__
 
 .tm_clone_table
-                0x00000870        0x0 load address 0x082122a0
+                0x00000870        0x0 load address 0x082122b0
  .tm_clone_table
                 0x00000870        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
  .tm_clone_table
                 0x00000870        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp/crtend.o
 
-.igot.plt       0x00000870        0x0 load address 0x082122a0
+.igot.plt       0x00000870        0x0 load address 0x082122b0
  .igot.plt      0x00000870        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2023.7/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
 
-.bss            0x00000870     0xe934 load address 0x082122a0
+.bss            0x00000870     0xe934 load address 0x082122b0
                 0x00000870                . = ALIGN (0x4)
                 0x00000870                __bss_start__ = .
  *(.bss*)
@@ -4554,7 +4554,7 @@ LOAD c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2
                 0x0000f1a4                . = ALIGN (0x4)
                 0x0000f1a4                __bss_end__ = .
 
-.stack          0x0000f1a8     0x3000 load address 0x082122a0
+.stack          0x0000f1a8     0x3000 load address 0x082122b0
                 0x0000f1a8                __StackLimit = .
  *(.stack*)
  .stack         0x0000f1a8     0x3000 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/common/src/sl_si91x_stack_object_declare.o
@@ -4562,7 +4562,7 @@ LOAD c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2
                 0x000121a8                __StackTop = .
                 0x000121a8                PROVIDE (__stack = __StackTop)
 
-.heap           0x000121a8    0x1da64 load address 0x082122a0
+.heap           0x000121a8    0x1da64 load address 0x082122b0
                 0x000121a8                __HeapBase = .
                 0x000121a8                __end__ = .
                 0x000121a8                end = __end__
@@ -4573,12 +4573,12 @@ LOAD c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/12.2.rel1_2
                 0x0002fc0c                __HeapLimit = .
                 0x0001da64                __heap_size = (__HeapLimit - __HeapBase)
 
-.udma_addr0     0x0002fc00      0x400 load address 0x082122a0
+.udma_addr0     0x0002fc00      0x400 load address 0x082122b0
  *(.udma_addr0*)
  .udma_addr0    0x0002fc00      0x400 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/UDMA.o
                 0x0002fc00                UDMA0_Table
 
-.udma_addr1     0x24061c00      0x180 load address 0x082126a0
+.udma_addr1     0x24061c00      0x180 load address 0x082126b0
  *(.udma_addr1*)
  .udma_addr1    0x24061c00      0x180 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/UDMA.o
                 0x24061c00                UDMA1_Table
@@ -4908,131 +4908,131 @@ LOAD linker stubs
  .comment       0x00000045       0x46 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net_basic_credentials.o
  .comment       0x00000045       0x46 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net_basic_profiles.o
 
-.debug_info     0x00000000    0xc92a8
+.debug_info     0x00000000    0xc92cc
  .debug_info    0x00000000     0x20f0 ./ampak_wl72917/power_save_manager.o
- .debug_info    0x000020f0     0x206c ./app.o
- .debug_info    0x0000415c       0x8d ./main.o
- .debug_info    0x000041e9      0x1e8 ./autogen/sl_event_handler.o
- .debug_info    0x000043d1      0x312 ./gecko_sdk_4.4.1/platform/common/src/sl_slist.o
- .debug_info    0x000046e3      0x2bc ./gecko_sdk_4.4.1/platform/common/src/sli_cmsis_os2_ext_task_register.o
- .debug_info    0x0000499f      0xecc ./gecko_sdk_4.4.1/platform/emlib/src/em_core.o
- .debug_info    0x0000586b      0x2c7 ./gecko_sdk_4.4.1/platform/service/mem_pool/src/sl_mem_pool.o
- .debug_info    0x00005b32       0xa7 ./gecko_sdk_4.4.1/platform/service/system/src/sl_system_init.o
- .debug_info    0x00005bd9       0x56 ./gecko_sdk_4.4.1/platform/service/system/src/sl_system_kernel.o
- .debug_info    0x00005c2f     0x6490 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
- .debug_info    0x0000c0bf     0x11d0 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
- .debug_info    0x0000d28f      0x316 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/list.o
- .debug_info    0x0000d5a5     0x2d1b ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
- .debug_info    0x000102c0     0x3ae8 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
- .debug_info    0x00013da8     0x1ecf ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
- .debug_info    0x00015c77      0x5e3 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/portable/GCC/ARM_CM4F/port.o
- .debug_info    0x0001625a      0x638 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/portable/MemMang/heap_4.o
- .debug_info    0x00016892    0x1309e ./wiseconnect3_sdk_3.1.4/components/board/silabs/src/rsi_board.o
- .debug_info    0x00029930      0xcf3 ./wiseconnect3_sdk_3.1.4/components/common/src/sl_utility.o
- .debug_info    0x0002a623     0x1760 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/iPMU_prog/iPMU_dotc/ipmu_apis.o
- .debug_info    0x0002bd83      0x6b7 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/iPMU_prog/iPMU_dotc/rsi_system_config_917.o
- .debug_info    0x0002c43a     0x59f3 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/rsi_deepsleep_soc.o
- .debug_info    0x00031e2d      0x282 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/startup_si91x.o
- .debug_info    0x000320af    0x16285 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/system_si91x.o
- .debug_info    0x00048334      0xd00 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/common/src/rsi_debug.o
- .debug_info    0x00049034       0x8f ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/common/src/sl_si91x_stack_object_declare.o
- .debug_info    0x000490c3      0xc36 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/common/src/syscalls.o
- .debug_info    0x00049cf9      0x643 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/config/src/rsi_nvic_priorities_config.o
- .debug_info    0x0004a33c    0x12ffe ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/UDMA.o
- .debug_info    0x0005d33a     0x5a37 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
- .debug_info    0x00062d71     0x391f ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/peripheral_drivers/src/clock_update.o
- .debug_info    0x00066690    0x160c5 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/peripheral_drivers/src/rsi_usart.o
- .debug_info    0x0007c755     0x3cd1 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_ipmu.o
- .debug_info    0x00080426     0x53b4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_pll.o
- .debug_info    0x000857da      0xa65 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_temp_sensor.o
- .debug_info    0x0008623f     0x2ed7 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_ulpss_clk.o
- .debug_info    0x00089116      0x157 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/rsi_hal_mcu_m4_ram.o
- .debug_info    0x0008926d      0xb12 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/rsi_hal_mcu_m4_rom.o
- .debug_info    0x00089d7f     0x1160 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_platform.o
- .debug_info    0x0008aedf    0x1943c ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_platform_wireless.o
- .debug_info    0x000a431b      0xba1 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_si91x_bus.o
- .debug_info    0x000a4ebc     0x1388 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sli_siwx917_soc.o
- .debug_info    0x000a6244      0x54d ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/errno/src/sl_si91x_errno.o
- .debug_info    0x000a6791      0x9c0 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/host_mcu/si91x/siwx917_soc_ncp_host.o
- .debug_info    0x000a7151      0x539 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/memory/mem_pool_buffers.o
- .debug_info    0x000a768a      0xbda ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_net_rsi_utility.o
- .debug_info    0x000a8264     0x1953 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_net_si91x_integration_handler.o
- .debug_info    0x000a9bb7      0xbb2 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_si91x_net_credentials.o
- .debug_info    0x000aa769     0x12e5 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_si91x_net_internal_stack.o
- .debug_info    0x000aba4e     0x343b ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_rsi_utility.o
- .debug_info    0x000aee89      0xb19 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_callback_framework.o
- .debug_info    0x000af9a2     0x70f5 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_driver.o
- .debug_info    0x000b6a97     0x2af0 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/threading/sli_si91x_multithreaded.o
- .debug_info    0x000b9587     0x6a53 ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/si91x/sl_wifi.o
- .debug_info    0x000bffda     0x13e1 ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/src/sl_wifi_callback_framework.o
- .debug_info    0x000c13bb     0x2af1 ./wiseconnect3_sdk_3.1.4/components/service/mqtt/si91x/sl_mqtt_client.o
- .debug_info    0x000c3eac     0x2187 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/si91x/sl_net_si91x.o
- .debug_info    0x000c6033     0x1621 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net.o
- .debug_info    0x000c7654      0xa39 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net_basic_credentials.o
- .debug_info    0x000c808d     0x121b ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net_basic_profiles.o
+ .debug_info    0x000020f0     0x2090 ./app.o
+ .debug_info    0x00004180       0x8d ./main.o
+ .debug_info    0x0000420d      0x1e8 ./autogen/sl_event_handler.o
+ .debug_info    0x000043f5      0x312 ./gecko_sdk_4.4.1/platform/common/src/sl_slist.o
+ .debug_info    0x00004707      0x2bc ./gecko_sdk_4.4.1/platform/common/src/sli_cmsis_os2_ext_task_register.o
+ .debug_info    0x000049c3      0xecc ./gecko_sdk_4.4.1/platform/emlib/src/em_core.o
+ .debug_info    0x0000588f      0x2c7 ./gecko_sdk_4.4.1/platform/service/mem_pool/src/sl_mem_pool.o
+ .debug_info    0x00005b56       0xa7 ./gecko_sdk_4.4.1/platform/service/system/src/sl_system_init.o
+ .debug_info    0x00005bfd       0x56 ./gecko_sdk_4.4.1/platform/service/system/src/sl_system_kernel.o
+ .debug_info    0x00005c53     0x6490 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
+ .debug_info    0x0000c0e3     0x11d0 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
+ .debug_info    0x0000d2b3      0x316 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/list.o
+ .debug_info    0x0000d5c9     0x2d1b ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+ .debug_info    0x000102e4     0x3ae8 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+ .debug_info    0x00013dcc     0x1ecf ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
+ .debug_info    0x00015c9b      0x5e3 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/portable/GCC/ARM_CM4F/port.o
+ .debug_info    0x0001627e      0x638 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/portable/MemMang/heap_4.o
+ .debug_info    0x000168b6    0x1309e ./wiseconnect3_sdk_3.1.4/components/board/silabs/src/rsi_board.o
+ .debug_info    0x00029954      0xcf3 ./wiseconnect3_sdk_3.1.4/components/common/src/sl_utility.o
+ .debug_info    0x0002a647     0x1760 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/iPMU_prog/iPMU_dotc/ipmu_apis.o
+ .debug_info    0x0002bda7      0x6b7 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/iPMU_prog/iPMU_dotc/rsi_system_config_917.o
+ .debug_info    0x0002c45e     0x59f3 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/rsi_deepsleep_soc.o
+ .debug_info    0x00031e51      0x282 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/startup_si91x.o
+ .debug_info    0x000320d3    0x16285 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/system_si91x.o
+ .debug_info    0x00048358      0xd00 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/common/src/rsi_debug.o
+ .debug_info    0x00049058       0x8f ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/common/src/sl_si91x_stack_object_declare.o
+ .debug_info    0x000490e7      0xc36 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/common/src/syscalls.o
+ .debug_info    0x00049d1d      0x643 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/config/src/rsi_nvic_priorities_config.o
+ .debug_info    0x0004a360    0x12ffe ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/UDMA.o
+ .debug_info    0x0005d35e     0x5a37 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
+ .debug_info    0x00062d95     0x391f ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/peripheral_drivers/src/clock_update.o
+ .debug_info    0x000666b4    0x160c5 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/peripheral_drivers/src/rsi_usart.o
+ .debug_info    0x0007c779     0x3cd1 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_ipmu.o
+ .debug_info    0x0008044a     0x53b4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_pll.o
+ .debug_info    0x000857fe      0xa65 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_temp_sensor.o
+ .debug_info    0x00086263     0x2ed7 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_ulpss_clk.o
+ .debug_info    0x0008913a      0x157 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/rsi_hal_mcu_m4_ram.o
+ .debug_info    0x00089291      0xb12 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/rsi_hal_mcu_m4_rom.o
+ .debug_info    0x00089da3     0x1160 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_platform.o
+ .debug_info    0x0008af03    0x1943c ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_platform_wireless.o
+ .debug_info    0x000a433f      0xba1 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_si91x_bus.o
+ .debug_info    0x000a4ee0     0x1388 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sli_siwx917_soc.o
+ .debug_info    0x000a6268      0x54d ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/errno/src/sl_si91x_errno.o
+ .debug_info    0x000a67b5      0x9c0 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/host_mcu/si91x/siwx917_soc_ncp_host.o
+ .debug_info    0x000a7175      0x539 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/memory/mem_pool_buffers.o
+ .debug_info    0x000a76ae      0xbda ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_net_rsi_utility.o
+ .debug_info    0x000a8288     0x1953 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_net_si91x_integration_handler.o
+ .debug_info    0x000a9bdb      0xbb2 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_si91x_net_credentials.o
+ .debug_info    0x000aa78d     0x12e5 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_si91x_net_internal_stack.o
+ .debug_info    0x000aba72     0x343b ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_rsi_utility.o
+ .debug_info    0x000aeead      0xb19 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_callback_framework.o
+ .debug_info    0x000af9c6     0x70f5 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_driver.o
+ .debug_info    0x000b6abb     0x2af0 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/threading/sli_si91x_multithreaded.o
+ .debug_info    0x000b95ab     0x6a53 ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/si91x/sl_wifi.o
+ .debug_info    0x000bfffe     0x13e1 ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/src/sl_wifi_callback_framework.o
+ .debug_info    0x000c13df     0x2af1 ./wiseconnect3_sdk_3.1.4/components/service/mqtt/si91x/sl_mqtt_client.o
+ .debug_info    0x000c3ed0     0x2187 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/si91x/sl_net_si91x.o
+ .debug_info    0x000c6057     0x1621 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net.o
+ .debug_info    0x000c7678      0xa39 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net_basic_credentials.o
+ .debug_info    0x000c80b1     0x121b ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net_basic_profiles.o
 
-.debug_abbrev   0x00000000     0xb871
+.debug_abbrev   0x00000000     0xb831
  .debug_abbrev  0x00000000      0x2bb ./ampak_wl72917/power_save_manager.o
- .debug_abbrev  0x000002bb      0x455 ./app.o
- .debug_abbrev  0x00000710       0x5d ./main.o
- .debug_abbrev  0x0000076d      0x12e ./autogen/sl_event_handler.o
- .debug_abbrev  0x0000089b      0x159 ./gecko_sdk_4.4.1/platform/common/src/sl_slist.o
- .debug_abbrev  0x000009f4      0x129 ./gecko_sdk_4.4.1/platform/common/src/sli_cmsis_os2_ext_task_register.o
- .debug_abbrev  0x00000b1d      0x382 ./gecko_sdk_4.4.1/platform/emlib/src/em_core.o
- .debug_abbrev  0x00000e9f      0x15f ./gecko_sdk_4.4.1/platform/service/mem_pool/src/sl_mem_pool.o
- .debug_abbrev  0x00000ffe       0x5c ./gecko_sdk_4.4.1/platform/service/system/src/sl_system_init.o
- .debug_abbrev  0x0000105a       0x51 ./gecko_sdk_4.4.1/platform/service/system/src/sl_system_kernel.o
- .debug_abbrev  0x000010ab      0x60a ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
- .debug_abbrev  0x000016b5      0x434 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
- .debug_abbrev  0x00001ae9      0x124 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/list.o
- .debug_abbrev  0x00001c0d      0x4c6 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
- .debug_abbrev  0x000020d3      0x54b ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
- .debug_abbrev  0x0000261e      0x493 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
- .debug_abbrev  0x00002ab1      0x2b1 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/portable/GCC/ARM_CM4F/port.o
- .debug_abbrev  0x00002d62      0x29c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/portable/MemMang/heap_4.o
- .debug_abbrev  0x00002ffe      0x3a4 ./wiseconnect3_sdk_3.1.4/components/board/silabs/src/rsi_board.o
- .debug_abbrev  0x000033a2      0x35c ./wiseconnect3_sdk_3.1.4/components/common/src/sl_utility.o
- .debug_abbrev  0x000036fe      0x3b3 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/iPMU_prog/iPMU_dotc/ipmu_apis.o
- .debug_abbrev  0x00003ab1       0x69 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/iPMU_prog/iPMU_dotc/rsi_system_config_917.o
- .debug_abbrev  0x00003b1a      0x459 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/rsi_deepsleep_soc.o
- .debug_abbrev  0x00003f73      0x1b3 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/startup_si91x.o
- .debug_abbrev  0x00004126      0x44c ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/system_si91x.o
- .debug_abbrev  0x00004572      0x3c2 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/common/src/rsi_debug.o
- .debug_abbrev  0x00004934       0x4c ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/common/src/sl_si91x_stack_object_declare.o
- .debug_abbrev  0x00004980      0x448 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/common/src/syscalls.o
- .debug_abbrev  0x00004dc8      0x14d ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/config/src/rsi_nvic_priorities_config.o
- .debug_abbrev  0x00004f15      0x32c ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/UDMA.o
- .debug_abbrev  0x00005241      0x42e ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
- .debug_abbrev  0x0000566f      0x1a6 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/peripheral_drivers/src/clock_update.o
- .debug_abbrev  0x00005815      0x5ac ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/peripheral_drivers/src/rsi_usart.o
- .debug_abbrev  0x00005dc1      0x311 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_ipmu.o
- .debug_abbrev  0x000060d2      0x30a ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_pll.o
- .debug_abbrev  0x000063dc      0x194 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_temp_sensor.o
- .debug_abbrev  0x00006570      0x28c ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_ulpss_clk.o
- .debug_abbrev  0x000067fc       0xe6 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/rsi_hal_mcu_m4_ram.o
- .debug_abbrev  0x000068e2      0x36f ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/rsi_hal_mcu_m4_rom.o
- .debug_abbrev  0x00006c51      0x2fb ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_platform.o
- .debug_abbrev  0x00006f4c      0x58b ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_platform_wireless.o
- .debug_abbrev  0x000074d7      0x2d0 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_si91x_bus.o
- .debug_abbrev  0x000077a7      0x419 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sli_siwx917_soc.o
- .debug_abbrev  0x00007bc0      0x144 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/errno/src/sl_si91x_errno.o
- .debug_abbrev  0x00007d04      0x239 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/host_mcu/si91x/siwx917_soc_ncp_host.o
- .debug_abbrev  0x00007f3d      0x236 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/memory/mem_pool_buffers.o
- .debug_abbrev  0x00008173      0x239 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_net_rsi_utility.o
- .debug_abbrev  0x000083ac      0x35f ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_net_si91x_integration_handler.o
- .debug_abbrev  0x0000870b      0x297 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_si91x_net_credentials.o
- .debug_abbrev  0x000089a2      0x297 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_si91x_net_internal_stack.o
- .debug_abbrev  0x00008c39      0x572 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_rsi_utility.o
- .debug_abbrev  0x000091ab      0x304 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_callback_framework.o
- .debug_abbrev  0x000094af      0x672 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_driver.o
- .debug_abbrev  0x00009b21      0x43e ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/threading/sli_si91x_multithreaded.o
- .debug_abbrev  0x00009f5f      0x629 ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/si91x/sl_wifi.o
- .debug_abbrev  0x0000a588      0x368 ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/src/sl_wifi_callback_framework.o
- .debug_abbrev  0x0000a8f0      0x451 ./wiseconnect3_sdk_3.1.4/components/service/mqtt/si91x/sl_mqtt_client.o
- .debug_abbrev  0x0000ad41      0x40d ./wiseconnect3_sdk_3.1.4/components/service/network_manager/si91x/sl_net_si91x.o
- .debug_abbrev  0x0000b14e      0x2c0 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net.o
- .debug_abbrev  0x0000b40e      0x25d ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net_basic_credentials.o
- .debug_abbrev  0x0000b66b      0x206 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net_basic_profiles.o
+ .debug_abbrev  0x000002bb      0x415 ./app.o
+ .debug_abbrev  0x000006d0       0x5d ./main.o
+ .debug_abbrev  0x0000072d      0x12e ./autogen/sl_event_handler.o
+ .debug_abbrev  0x0000085b      0x159 ./gecko_sdk_4.4.1/platform/common/src/sl_slist.o
+ .debug_abbrev  0x000009b4      0x129 ./gecko_sdk_4.4.1/platform/common/src/sli_cmsis_os2_ext_task_register.o
+ .debug_abbrev  0x00000add      0x382 ./gecko_sdk_4.4.1/platform/emlib/src/em_core.o
+ .debug_abbrev  0x00000e5f      0x15f ./gecko_sdk_4.4.1/platform/service/mem_pool/src/sl_mem_pool.o
+ .debug_abbrev  0x00000fbe       0x5c ./gecko_sdk_4.4.1/platform/service/system/src/sl_system_init.o
+ .debug_abbrev  0x0000101a       0x51 ./gecko_sdk_4.4.1/platform/service/system/src/sl_system_kernel.o
+ .debug_abbrev  0x0000106b      0x60a ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
+ .debug_abbrev  0x00001675      0x434 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
+ .debug_abbrev  0x00001aa9      0x124 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/list.o
+ .debug_abbrev  0x00001bcd      0x4c6 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+ .debug_abbrev  0x00002093      0x54b ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+ .debug_abbrev  0x000025de      0x493 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
+ .debug_abbrev  0x00002a71      0x2b1 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/portable/GCC/ARM_CM4F/port.o
+ .debug_abbrev  0x00002d22      0x29c ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/portable/MemMang/heap_4.o
+ .debug_abbrev  0x00002fbe      0x3a4 ./wiseconnect3_sdk_3.1.4/components/board/silabs/src/rsi_board.o
+ .debug_abbrev  0x00003362      0x35c ./wiseconnect3_sdk_3.1.4/components/common/src/sl_utility.o
+ .debug_abbrev  0x000036be      0x3b3 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/iPMU_prog/iPMU_dotc/ipmu_apis.o
+ .debug_abbrev  0x00003a71       0x69 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/iPMU_prog/iPMU_dotc/rsi_system_config_917.o
+ .debug_abbrev  0x00003ada      0x459 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/rsi_deepsleep_soc.o
+ .debug_abbrev  0x00003f33      0x1b3 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/startup_si91x.o
+ .debug_abbrev  0x000040e6      0x44c ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/system_si91x.o
+ .debug_abbrev  0x00004532      0x3c2 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/common/src/rsi_debug.o
+ .debug_abbrev  0x000048f4       0x4c ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/common/src/sl_si91x_stack_object_declare.o
+ .debug_abbrev  0x00004940      0x448 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/common/src/syscalls.o
+ .debug_abbrev  0x00004d88      0x14d ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/config/src/rsi_nvic_priorities_config.o
+ .debug_abbrev  0x00004ed5      0x32c ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/UDMA.o
+ .debug_abbrev  0x00005201      0x42e ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
+ .debug_abbrev  0x0000562f      0x1a6 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/peripheral_drivers/src/clock_update.o
+ .debug_abbrev  0x000057d5      0x5ac ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/peripheral_drivers/src/rsi_usart.o
+ .debug_abbrev  0x00005d81      0x311 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_ipmu.o
+ .debug_abbrev  0x00006092      0x30a ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_pll.o
+ .debug_abbrev  0x0000639c      0x194 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_temp_sensor.o
+ .debug_abbrev  0x00006530      0x28c ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_ulpss_clk.o
+ .debug_abbrev  0x000067bc       0xe6 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/rsi_hal_mcu_m4_ram.o
+ .debug_abbrev  0x000068a2      0x36f ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/rsi_hal_mcu_m4_rom.o
+ .debug_abbrev  0x00006c11      0x2fb ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_platform.o
+ .debug_abbrev  0x00006f0c      0x58b ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_platform_wireless.o
+ .debug_abbrev  0x00007497      0x2d0 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_si91x_bus.o
+ .debug_abbrev  0x00007767      0x419 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sli_siwx917_soc.o
+ .debug_abbrev  0x00007b80      0x144 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/errno/src/sl_si91x_errno.o
+ .debug_abbrev  0x00007cc4      0x239 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/host_mcu/si91x/siwx917_soc_ncp_host.o
+ .debug_abbrev  0x00007efd      0x236 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/memory/mem_pool_buffers.o
+ .debug_abbrev  0x00008133      0x239 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_net_rsi_utility.o
+ .debug_abbrev  0x0000836c      0x35f ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_net_si91x_integration_handler.o
+ .debug_abbrev  0x000086cb      0x297 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_si91x_net_credentials.o
+ .debug_abbrev  0x00008962      0x297 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_si91x_net_internal_stack.o
+ .debug_abbrev  0x00008bf9      0x572 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_rsi_utility.o
+ .debug_abbrev  0x0000916b      0x304 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_callback_framework.o
+ .debug_abbrev  0x0000946f      0x672 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_driver.o
+ .debug_abbrev  0x00009ae1      0x43e ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/threading/sli_si91x_multithreaded.o
+ .debug_abbrev  0x00009f1f      0x629 ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/si91x/sl_wifi.o
+ .debug_abbrev  0x0000a548      0x368 ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/src/sl_wifi_callback_framework.o
+ .debug_abbrev  0x0000a8b0      0x451 ./wiseconnect3_sdk_3.1.4/components/service/mqtt/si91x/sl_mqtt_client.o
+ .debug_abbrev  0x0000ad01      0x40d ./wiseconnect3_sdk_3.1.4/components/service/network_manager/si91x/sl_net_si91x.o
+ .debug_abbrev  0x0000b10e      0x2c0 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net.o
+ .debug_abbrev  0x0000b3ce      0x25d ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net_basic_credentials.o
+ .debug_abbrev  0x0000b62b      0x206 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net_basic_profiles.o
 
 .debug_loc      0x00000000    0x27705
  .debug_loc     0x00000000      0x150 ./ampak_wl72917/power_save_manager.o
@@ -5279,68 +5279,68 @@ LOAD linker stubs
  .debug_ranges  0x00003158       0x48 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net_basic_credentials.o
  .debug_ranges  0x000031a0       0x20 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net_basic_profiles.o
 
-.debug_line     0x00000000    0x2b7f3
+.debug_line     0x00000000    0x2b7f8
  .debug_line    0x00000000      0x6e0 ./ampak_wl72917/power_save_manager.o
- .debug_line    0x000006e0      0xaea ./app.o
- .debug_line    0x000011ca       0xd3 ./main.o
- .debug_line    0x0000129d      0x3d9 ./autogen/sl_event_handler.o
- .debug_line    0x00001676      0x29d ./gecko_sdk_4.4.1/platform/common/src/sl_slist.o
- .debug_line    0x00001913      0x3da ./gecko_sdk_4.4.1/platform/common/src/sli_cmsis_os2_ext_task_register.o
- .debug_line    0x00001ced      0x877 ./gecko_sdk_4.4.1/platform/emlib/src/em_core.o
- .debug_line    0x00002564      0x373 ./gecko_sdk_4.4.1/platform/service/mem_pool/src/sl_mem_pool.o
- .debug_line    0x000028d7      0x117 ./gecko_sdk_4.4.1/platform/service/system/src/sl_system_init.o
- .debug_line    0x000029ee      0x106 ./gecko_sdk_4.4.1/platform/service/system/src/sl_system_kernel.o
- .debug_line    0x00002af4     0x3606 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
- .debug_line    0x000060fa      0xbbb ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
- .debug_line    0x00006cb5      0x402 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/list.o
- .debug_line    0x000070b7     0x205d ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
- .debug_line    0x00009114     0x2de6 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
- .debug_line    0x0000befa      0xeda ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
- .debug_line    0x0000cdd4      0x7d9 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/portable/GCC/ARM_CM4F/port.o
- .debug_line    0x0000d5ad      0x7ce ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/portable/MemMang/heap_4.o
- .debug_line    0x0000dd7b      0x70f ./wiseconnect3_sdk_3.1.4/components/board/silabs/src/rsi_board.o
- .debug_line    0x0000e48a      0xb3c ./wiseconnect3_sdk_3.1.4/components/common/src/sl_utility.o
- .debug_line    0x0000efc6      0xca4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/iPMU_prog/iPMU_dotc/ipmu_apis.o
- .debug_line    0x0000fc6a      0x24b ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/iPMU_prog/iPMU_dotc/rsi_system_config_917.o
- .debug_line    0x0000feb5      0xd04 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/rsi_deepsleep_soc.o
- .debug_line    0x00010bb9      0x303 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/startup_si91x.o
- .debug_line    0x00010ebc      0x975 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/system_si91x.o
- .debug_line    0x00011831      0x5ca ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/common/src/rsi_debug.o
- .debug_line    0x00011dfb       0xbc ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/common/src/sl_si91x_stack_object_declare.o
- .debug_line    0x00011eb7      0xa9b ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/common/src/syscalls.o
- .debug_line    0x00012952      0x30e ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/config/src/rsi_nvic_priorities_config.o
- .debug_line    0x00012c60      0x9fb ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/UDMA.o
- .debug_line    0x0001365b      0xced ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
- .debug_line    0x00014348      0x9c7 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/peripheral_drivers/src/clock_update.o
- .debug_line    0x00014d0f     0x2133 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/peripheral_drivers/src/rsi_usart.o
- .debug_line    0x00016e42     0x18e6 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_ipmu.o
- .debug_line    0x00018728      0x7d0 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_pll.o
- .debug_line    0x00018ef8      0x4b3 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_temp_sensor.o
- .debug_line    0x000193ab      0x726 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_ulpss_clk.o
- .debug_line    0x00019ad1      0x34d ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/rsi_hal_mcu_m4_ram.o
- .debug_line    0x00019e1e      0x706 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/rsi_hal_mcu_m4_rom.o
- .debug_line    0x0001a524      0x6fb ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_platform.o
- .debug_line    0x0001ac1f      0xf90 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_platform_wireless.o
- .debug_line    0x0001bbaf      0x6c2 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_si91x_bus.o
- .debug_line    0x0001c271      0xa3c ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sli_siwx917_soc.o
- .debug_line    0x0001ccad      0x2f4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/errno/src/sl_si91x_errno.o
- .debug_line    0x0001cfa1      0x51c ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/host_mcu/si91x/siwx917_soc_ncp_host.o
- .debug_line    0x0001d4bd      0x56b ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/memory/mem_pool_buffers.o
- .debug_line    0x0001da28      0x60d ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_net_rsi_utility.o
- .debug_line    0x0001e035      0x870 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_net_si91x_integration_handler.o
- .debug_line    0x0001e8a5      0x605 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_si91x_net_credentials.o
- .debug_line    0x0001eeaa      0x853 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_si91x_net_internal_stack.o
- .debug_line    0x0001f6fd     0x16d6 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_rsi_utility.o
- .debug_line    0x00020dd3      0x68a ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_callback_framework.o
- .debug_line    0x0002145d     0x28da ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_driver.o
- .debug_line    0x00023d37     0x1476 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/threading/sli_si91x_multithreaded.o
- .debug_line    0x000251ad     0x2ade ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/si91x/sl_wifi.o
- .debug_line    0x00027c8b      0x718 ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/src/sl_wifi_callback_framework.o
- .debug_line    0x000283a3     0x1421 ./wiseconnect3_sdk_3.1.4/components/service/mqtt/si91x/sl_mqtt_client.o
- .debug_line    0x000297c4      0xa40 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/si91x/sl_net_si91x.o
- .debug_line    0x0002a204      0x722 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net.o
- .debug_line    0x0002a926      0x7cd ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net_basic_credentials.o
- .debug_line    0x0002b0f3      0x700 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net_basic_profiles.o
+ .debug_line    0x000006e0      0xaef ./app.o
+ .debug_line    0x000011cf       0xd3 ./main.o
+ .debug_line    0x000012a2      0x3d9 ./autogen/sl_event_handler.o
+ .debug_line    0x0000167b      0x29d ./gecko_sdk_4.4.1/platform/common/src/sl_slist.o
+ .debug_line    0x00001918      0x3da ./gecko_sdk_4.4.1/platform/common/src/sli_cmsis_os2_ext_task_register.o
+ .debug_line    0x00001cf2      0x877 ./gecko_sdk_4.4.1/platform/emlib/src/em_core.o
+ .debug_line    0x00002569      0x373 ./gecko_sdk_4.4.1/platform/service/mem_pool/src/sl_mem_pool.o
+ .debug_line    0x000028dc      0x117 ./gecko_sdk_4.4.1/platform/service/system/src/sl_system_init.o
+ .debug_line    0x000029f3      0x106 ./gecko_sdk_4.4.1/platform/service/system/src/sl_system_kernel.o
+ .debug_line    0x00002af9     0x3606 ./gecko_sdk_4.4.1/util/third_party/freertos/cmsis/Source/cmsis_os2.o
+ .debug_line    0x000060ff      0xbbb ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/event_groups.o
+ .debug_line    0x00006cba      0x402 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/list.o
+ .debug_line    0x000070bc     0x205d ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/queue.o
+ .debug_line    0x00009119     0x2de6 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/tasks.o
+ .debug_line    0x0000beff      0xeda ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/timers.o
+ .debug_line    0x0000cdd9      0x7d9 ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/portable/GCC/ARM_CM4F/port.o
+ .debug_line    0x0000d5b2      0x7ce ./gecko_sdk_4.4.1/util/third_party/freertos/kernel/portable/MemMang/heap_4.o
+ .debug_line    0x0000dd80      0x70f ./wiseconnect3_sdk_3.1.4/components/board/silabs/src/rsi_board.o
+ .debug_line    0x0000e48f      0xb3c ./wiseconnect3_sdk_3.1.4/components/common/src/sl_utility.o
+ .debug_line    0x0000efcb      0xca4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/iPMU_prog/iPMU_dotc/ipmu_apis.o
+ .debug_line    0x0000fc6f      0x24b ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/iPMU_prog/iPMU_dotc/rsi_system_config_917.o
+ .debug_line    0x0000feba      0xd04 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/rsi_deepsleep_soc.o
+ .debug_line    0x00010bbe      0x303 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/startup_si91x.o
+ .debug_line    0x00010ec1      0x975 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/chip/src/system_si91x.o
+ .debug_line    0x00011836      0x5ca ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/common/src/rsi_debug.o
+ .debug_line    0x00011e00       0xbc ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/common/src/sl_si91x_stack_object_declare.o
+ .debug_line    0x00011ebc      0xa9b ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/common/src/syscalls.o
+ .debug_line    0x00012957      0x30e ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/core/config/src/rsi_nvic_priorities_config.o
+ .debug_line    0x00012c65      0x9fb ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/UDMA.o
+ .debug_line    0x00013660      0xced ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/cmsis_driver/USART.o
+ .debug_line    0x0001434d      0x9c7 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/peripheral_drivers/src/clock_update.o
+ .debug_line    0x00014d14     0x2133 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/peripheral_drivers/src/rsi_usart.o
+ .debug_line    0x00016e47     0x18e6 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_ipmu.o
+ .debug_line    0x0001872d      0x7d0 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_pll.o
+ .debug_line    0x00018efd      0x4b3 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_temp_sensor.o
+ .debug_line    0x000193b0      0x726 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/mcu/drivers/systemlevel/src/rsi_ulpss_clk.o
+ .debug_line    0x00019ad6      0x34d ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/rsi_hal_mcu_m4_ram.o
+ .debug_line    0x00019e23      0x706 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/rsi_hal_mcu_m4_rom.o
+ .debug_line    0x0001a529      0x6fb ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_platform.o
+ .debug_line    0x0001ac24      0xf90 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_platform_wireless.o
+ .debug_line    0x0001bbb4      0x6c2 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sl_si91x_bus.o
+ .debug_line    0x0001c276      0xa3c ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/ahb_interface/src/sli_siwx917_soc.o
+ .debug_line    0x0001ccb2      0x2f4 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/errno/src/sl_si91x_errno.o
+ .debug_line    0x0001cfa6      0x51c ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/host_mcu/si91x/siwx917_soc_ncp_host.o
+ .debug_line    0x0001d4c2      0x56b ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/memory/mem_pool_buffers.o
+ .debug_line    0x0001da2d      0x60d ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_net_rsi_utility.o
+ .debug_line    0x0001e03a      0x870 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_net_si91x_integration_handler.o
+ .debug_line    0x0001e8aa      0x605 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_si91x_net_credentials.o
+ .debug_line    0x0001eeaf      0x853 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/sl_net/src/sl_si91x_net_internal_stack.o
+ .debug_line    0x0001f702     0x16d6 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_rsi_utility.o
+ .debug_line    0x00020dd8      0x68a ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_callback_framework.o
+ .debug_line    0x00021462     0x28da ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/src/sl_si91x_driver.o
+ .debug_line    0x00023d3c     0x1476 ./wiseconnect3_sdk_3.1.4/components/device/silabs/si91x/wireless/threading/sli_si91x_multithreaded.o
+ .debug_line    0x000251b2     0x2ade ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/si91x/sl_wifi.o
+ .debug_line    0x00027c90      0x718 ./wiseconnect3_sdk_3.1.4/components/protocol/wifi/src/sl_wifi_callback_framework.o
+ .debug_line    0x000283a8     0x1421 ./wiseconnect3_sdk_3.1.4/components/service/mqtt/si91x/sl_mqtt_client.o
+ .debug_line    0x000297c9      0xa40 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/si91x/sl_net_si91x.o
+ .debug_line    0x0002a209      0x722 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net.o
+ .debug_line    0x0002a92b      0x7cd ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net_basic_credentials.o
+ .debug_line    0x0002b0f8      0x700 ./wiseconnect3_sdk_3.1.4/components/service/network_manager/src/sl_net_basic_profiles.o
 
 .debug_str      0x00000000    0x23f92
  .debug_str     0x00000000     0x1ecd ./ampak_wl72917/power_save_manager.o

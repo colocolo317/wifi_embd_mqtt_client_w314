@@ -39,9 +39,12 @@
 #include "string.h"
 #include "app.h"
 #include "ampak_wl72917/ampak_util.h"
+#include "ampak_wl72917/ble_config.h"
 /******************************************************
  *                    Constants
  ******************************************************/
+#define AMPAK_USE_BLE 1
+
 
 #define MQTT_BROKER_IP   "10.10.28.233"
 #define MQTT_BROKER_PORT 1883
@@ -92,7 +95,9 @@ const osThreadAttr_t mqtt_thread_attributes = {
   .reserved   = 0,
 };
 
-static const sl_wifi_device_configuration_t wifi_mqtt_client_configuration = {
+#if AMPAK_USE_DEFAULT_DEVICE_CONFIG
+static const sl_wifi_device_configuration_t wifi_mqtt_client_configuration =
+{
   .boot_option = LOAD_NWP_FW,
   .mac_address = NULL,
   .band        = SL_SI91X_WIFI_BAND_2_4GHZ,
@@ -117,6 +122,108 @@ static const sl_wifi_device_configuration_t wifi_mqtt_client_configuration = {
                    .ble_ext_feature_bit_map = 0,
                    .config_feature_bit_map  = 0 }
 };
+#else
+static const sl_wifi_device_configuration_t wifi_mqtt_client_configuration =
+{
+    .boot_option = LOAD_NWP_FW,
+    .mac_address = NULL,
+    .band        = SL_SI91X_WIFI_BAND_2_4GHZ,
+    .region_code = US,
+    .boot_config =
+    {
+      .oper_mode       = SL_SI91X_CLIENT_MODE,
+#if AMPAK_USE_BLE
+      .coex_mode       = SL_SI91X_WLAN_BLE_MODE,
+#else
+      .coex_mode       = SL_SI91X_WLAN_ONLY_MODE,
+#endif
+      .feature_bit_map =
+          ( SL_SI91X_FEAT_SECURITY_PSK
+          | SL_SI91X_FEAT_AGGREGATION
+          | SL_SI91X_FEAT_ULP_GPIO_BASED_HANDSHAKE
+          | SL_SI91X_FEAT_DEV_TO_HOST_ULP_GPIO_1
+          | SL_SI91X_FEAT_SECURITY_OPEN
+#ifdef SLI_SI91X_MCU_INTERFACE
+          | SL_SI91X_FEAT_WPS_DISABLE
+#endif
+          ),
+      .tcp_ip_feature_bit_map =
+        ( SL_SI91X_TCP_IP_FEAT_DHCPV4_CLIENT
+        | SL_SI91X_TCP_IP_FEAT_DNS_CLIENT
+        | SL_SI91X_TCP_IP_FEAT_HTTP_CLIENT
+        | SL_SI91X_TCP_IP_FEAT_SSL
+        | SL_SI91X_TCP_IP_FEAT_EXTENSION_VALID
+        ),
+      .custom_feature_bit_map =
+        ( SL_SI91X_CUSTOM_FEAT_EXTENTION_VALID
+        ),
+      .ext_custom_feature_bit_map =
+        ( SL_SI91X_EXT_FEAT_LOW_POWER_MODE
+        | SL_SI91X_EXT_FEAT_XTAL_CLK
+        | MEMORY_CONFIG
+        | SL_SI91X_EXT_FEAT_SSL_VERSIONS_SUPPORT
+        | SL_SI91X_EXT_FEAT_UART_SEL_FOR_DEBUG_PRINTS
+#ifdef SLI_SI917
+        | SL_SI91X_EXT_FEAT_FRONT_END_SWITCH_PINS_ULP_GPIO_4_5_0
+#endif // SLI_SI917
+        | SL_SI91X_EXT_FEAT_BT_CUSTOM_FEAT_ENABLE
+        ),
+      .ext_tcp_ip_feature_bit_map =
+        ( SL_SI91X_CONFIG_FEAT_EXTENTION_VALID
+        | SL_SI91X_EXT_TCP_IP_WINDOW_SCALING
+        | SL_SI91X_EXT_TCP_IP_TOTAL_SELECTS(10)
+        | SL_SI91X_EXT_TCP_IP_FEAT_SSL_THREE_SOCKETS
+        | SL_SI91X_EXT_TCP_IP_FEAT_SSL_MEMORY_CLOUD
+        | SL_SI91X_EXT_EMB_MQTT_ENABLE
+        ),
+      .bt_feature_bit_map =
+        (SL_SI91X_BT_RF_TYPE
+        | SL_SI91X_ENABLE_BLE_PROTOCOL
+        ),
+      //!ENABLE_BLE_PROTOCOL in bt_feature_bit_map
+      .ble_feature_bit_map =
+        (
+          (SL_SI91X_BLE_MAX_NBR_PERIPHERALS(RSI_BLE_MAX_NBR_PERIPHERALS)
+          | SL_SI91X_BLE_MAX_NBR_CENTRALS(RSI_BLE_MAX_NBR_CENTRALS)
+          | SL_SI91X_BLE_MAX_NBR_ATT_SERV(RSI_BLE_MAX_NBR_ATT_SERV)
+          | SL_SI91X_BLE_MAX_NBR_ATT_REC(RSI_BLE_MAX_NBR_ATT_REC))
+          | SL_SI91X_FEAT_BLE_CUSTOM_FEAT_EXTENTION_VALID
+          | SL_SI91X_BLE_PWR_INX(RSI_BLE_PWR_INX
+          )
+          | SL_SI91X_BLE_PWR_SAVE_OPTIONS(RSI_BLE_PWR_SAVE_OPTIONS)
+          | SL_SI91X_916_BLE_COMPATIBLE_FEAT_ENABLE
+#if RSI_BLE_GATT_ASYNC_ENABLE
+          | SL_SI91X_BLE_GATT_ASYNC_ENABLE
+#endif
+        ),
+      .ble_ext_feature_bit_map =
+        (
+          (SL_SI91X_BLE_NUM_CONN_EVENTS(RSI_BLE_NUM_CONN_EVENTS)
+          | SL_SI91X_BLE_NUM_REC_BYTES(RSI_BLE_NUM_REC_BYTES)
+        )
+#if RSI_BLE_INDICATE_CONFIRMATION_FROM_HOST
+        | SL_SI91X_BLE_INDICATE_CONFIRMATION_FROM_HOST //indication response from app
+#endif
+#if RSI_BLE_MTU_EXCHANGE_FROM_HOST
+        | SL_SI91X_BLE_MTU_EXCHANGE_FROM_HOST //MTU Exchange request initiation from app
+#endif
+#if RSI_BLE_SET_SCAN_RESP_DATA_FROM_HOST
+        | (SL_SI91X_BLE_SET_SCAN_RESP_DATA_FROM_HOST) //Set SCAN Resp Data from app
+#endif
+#if RSI_BLE_DISABLE_CODED_PHY_FROM_HOST
+        | (SL_SI91X_BLE_DISABLE_CODED_PHY_FROM_HOST) //Disable Coded PHY from app
+#endif
+#if BLE_SIMPLE_GATT
+        | SL_SI91X_BLE_GATT_INIT
+#endif
+
+       ),
+     .config_feature_bit_map =
+       (SL_SI91X_FEAT_SLEEP_GPIO_SEL_BITMAP
+       )
+   }
+};
+#endif
 
 sl_mqtt_client_t client = { 0 };
 
@@ -481,8 +588,12 @@ sl_status_t mqtt_client_setup()
   }
   printf("Connect to mqtt broker Success \r\n");
 
+  //ampak_switch_device_profile_startover();
+#if 1//AMPAK_USE_SLEEP
   osDelay(1000);
+  printf("Go DTIM 10\r\n");
   ampak_m4_sleep_wakeup();
+#endif
 
   while (!is_execution_completed) {
     osThreadYield(); // TODO: keep running in this while loop
