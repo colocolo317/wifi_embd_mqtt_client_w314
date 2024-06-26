@@ -95,8 +95,8 @@ const osThreadAttr_t mqtt_thread_attributes = {
   .reserved   = 0,
 };
 
-#if AMPAK_USE_DEFAULT_DEVICE_CONFIG
-static const sl_wifi_device_configuration_t wifi_mqtt_client_configuration =
+//#if AMPAK_USE_DEFAULT_DEVICE_CONFIG
+static const sl_wifi_device_configuration_t origine_wifi_mqtt_client_configuration =
 {
   .boot_option = LOAD_NWP_FW,
   .mac_address = NULL,
@@ -122,7 +122,7 @@ static const sl_wifi_device_configuration_t wifi_mqtt_client_configuration =
                    .ble_ext_feature_bit_map = 0,
                    .config_feature_bit_map  = 0 }
 };
-#else
+//#else
 static const sl_wifi_device_configuration_t wifi_mqtt_client_configuration =
 {
     .boot_option = LOAD_NWP_FW,
@@ -223,7 +223,7 @@ static const sl_wifi_device_configuration_t wifi_mqtt_client_configuration =
        )
    }
 };
-#endif
+//#endif
 
 sl_mqtt_client_t client = { 0 };
 
@@ -232,6 +232,8 @@ uint8_t is_execution_completed = 0;
 sl_mqtt_client_credentials_t *client_credentails = NULL;
 
 char mac_for_id[13] = {0};
+bool first_message = 1;
+bool startover_ready = 0;
 
 sl_mqtt_client_configuration_t mqtt_client_configuration = { .is_clean_session = IS_CLEAN_SESSION,
                                                              .client_id        = (uint8_t *)CLIENT_ID,
@@ -273,8 +275,10 @@ void mqtt_client_event_handler(void *client, sl_mqtt_client_event_t event, void 
 void mqtt_client_error_event_handler(void *client, sl_mqtt_client_error_status_t *error);
 void mqtt_client_cleanup();
 void print_char_buffer(char *buffer, uint32_t buffer_length);
-sl_status_t mqtt_client_setup();
+sl_status_t mqtt_client_setup(void);
 sl_status_t mqtt_net_up(void);
+sl_status_t mqtt_net_up2(void);
+void ampak_switch_device_profile_startover(void);
 
 
 osSemaphoreId_t mqtt_sem;
@@ -330,6 +334,26 @@ sl_status_t mqtt_net_up(void)
   return status;
 }
 
+sl_status_t mqtt_net_up2(void)
+{
+  sl_status_t status;
+
+  status = sl_net_init(SL_NET_WIFI_CLIENT_INTERFACE, &origine_wifi_mqtt_client_configuration, NULL, NULL);
+  if (status != SL_STATUS_OK && status != SL_STATUS_ALREADY_INITIALIZED) {
+    printf("Failed to start Wi-Fi client interface: 0x%lx\r\n", status);
+    return status;
+  }
+  printf("\r\nWi-Fi client interface up Success\r\n");
+
+  status = sl_net_up(SL_NET_WIFI_CLIENT_INTERFACE, SL_NET_DEFAULT_WIFI_CLIENT_PROFILE_ID);
+  if (status != SL_STATUS_OK) {
+    printf("Failed to bring Wi-Fi client interface up: 0x%lx\r\n", status);
+    return status;
+  }
+  printf("Wi-Fi client connected\r\n");
+  return status;
+}
+
 void mqtt_init(void)
 {
   mqtt_sem = osSemaphoreNew(1,0,NULL);
@@ -337,8 +361,6 @@ void mqtt_init(void)
       printf("Fail to new sem\r\n");
   }
   osThreadNew((osThreadFunc_t)mqtt_task, NULL, &mqtt_thread_attributes);
-
-
 }
 
 void mqtt_task(void *argument)
@@ -347,6 +369,11 @@ void mqtt_task(void *argument)
 #if AMPAK_NOT_NET_UP
   mqtt_net_up();
 #endif
+  mqtt_client_setup();
+
+  ampak_switch_device_profile_startover();
+
+  mqtt_net_up2();
   mqtt_client_setup();
   //sl_status_t status;
   while (1) {
@@ -361,6 +388,7 @@ void mqtt_client_cleanup()
 {
   SL_CLEANUP_MALLOC(client_credentails);
   is_execution_completed = 1;
+  printf("mqtt_client_cleanup() done\r\n");
 }
 
 void mqtt_client_message_handler(void *client, sl_mqtt_client_message_t *message, void *context)
@@ -390,6 +418,23 @@ void mqtt_client_message_handler(void *client, sl_mqtt_client_message_t *message
     strncpy(report+strlen("Ack: "), (char *)message->content, message->content_length);
     mqtt_publish_message_api(report);
   }
+
+  if(first_message)
+  {
+    first_message = 0;
+    // Unsubscribing to already subscribed topic.
+    status = sl_mqtt_client_unsubscribe(client,
+                                        (uint8_t *)TOPIC_TO_BE_SUBSCRIBED,
+                                        strlen(TOPIC_TO_BE_SUBSCRIBED),
+                                        0,
+                                        TOPIC_TO_BE_SUBSCRIBED);
+    if (status != SL_STATUS_IN_PROGRESS) {
+      printf("Failed to unsubscribe : 0x%lx\r\n", status);
+
+      mqtt_client_cleanup();
+      return;
+    }
+  }
 }
 
 void print_char_buffer(char *buffer, uint32_t buffer_length)
@@ -403,7 +448,7 @@ void mqtt_client_error_event_handler(void *client, sl_mqtt_client_error_status_t
 {
   UNUSED_PARAMETER(client);
   printf("Terminating program, Error: %d\r\n", *error);
-#if AMPAK_USE_FUNC_MQTT_CLIENT_CLEANUP
+#if 1//AMPAK_USE_FUNC_MQTT_CLIENT_CLEANUP
   mqtt_client_cleanup();
 #endif
 }
@@ -456,7 +501,7 @@ void mqtt_client_event_handler(void *client, sl_mqtt_client_event_t event, void 
       char *unsubscribed_topic = (char *)context;
 
       printf("Unsubscribed from topic: %s\r\n", unsubscribed_topic);
-#if AMPAK_MQTT_DISCONNECT_ON_UNSUBSCRIBE
+#if 1//AMPAK_MQTT_DISCONNECT_ON_UNSUBSCRIBE
       sl_mqtt_client_disconnect(client, 0);
 #endif
       break;
@@ -464,7 +509,7 @@ void mqtt_client_event_handler(void *client, sl_mqtt_client_event_t event, void 
 
     case SL_MQTT_CLIENT_DISCONNECTED_EVENT: {
       printf("Disconnected from MQTT broker\r\n");
-#if AMPAK_USE_FUNC_MQTT_CLIENT_CLEANUP
+#if 1//AMPAK_USE_FUNC_MQTT_CLIENT_CLEANUP
       mqtt_client_cleanup();
 #endif
       break;
@@ -479,8 +524,9 @@ void mqtt_client_event_handler(void *client, sl_mqtt_client_event_t event, void 
   }
 }
 
-sl_status_t mqtt_client_setup()
+sl_status_t mqtt_client_setup(void)
 {
+  is_execution_completed = 0;
   sl_status_t status;
 
   /** get mac addr for ID **/
@@ -588,8 +634,7 @@ sl_status_t mqtt_client_setup()
   }
   printf("Connect to mqtt broker Success \r\n");
 
-  //ampak_switch_device_profile_startover();
-#if 1//AMPAK_USE_SLEEP
+#if AMPAK_USE_SLEEP
   osDelay(1000);
   printf("Go DTIM 10\r\n");
   ampak_m4_sleep_wakeup();
@@ -602,4 +647,36 @@ sl_status_t mqtt_client_setup()
   printf("Example execution completed \r\n");
 
   return SL_STATUS_OK;
+}
+
+void ampak_switch_device_profile_startover(void)
+{
+  sl_status_t status;
+#if 0
+  while(client.state != SL_MQTT_CLIENT_CONNECTED)
+  {
+    printf(".");
+    osThreadYield();
+  }
+  printf("\r\n");
+
+  status = sl_mqtt_client_disconnect(&client,0);
+  if (status != SL_STATUS_OK) { printf("sl_mqtt_client_disconnect failed: 0x%lx\r\n", status); return;}
+  printf("sl_mqtt_client_disconnect pass\r\n");
+  status = sl_mqtt_client_deinit(&client);
+  if (status != SL_STATUS_OK) { printf("sl_mqtt_client_deinit failed: 0x%lx\r\n", status); return;}
+  printf("sl_mqtt_client_deinit pass\r\n");
+#endif
+  status = sl_net_down(SL_NET_WIFI_CLIENT_INTERFACE);
+  if (status != SL_STATUS_OK) { printf("sl_net_down failed: 0x%lx\r\n", status); return;}
+  printf("sl_net_down pass\r\n");
+  status = sl_net_deinit(SL_NET_WIFI_CLIENT_INTERFACE);
+  if (status != SL_STATUS_OK) { printf("sl_net_deinit failed: 0x%lx\r\n", status); return;}
+  printf("sl_net_deinit pass\r\n");
+  status = sl_mqtt_client_deinit(&client);
+  if (status != SL_STATUS_OK) { printf("sl_mqtt_client_deinit failed: 0x%lx\r\n", status); return;}
+  printf("sl_mqtt_client_deinit pass\r\n");
+  mqtt_client_cleanup();
+
+  startover_ready = 1;
 }

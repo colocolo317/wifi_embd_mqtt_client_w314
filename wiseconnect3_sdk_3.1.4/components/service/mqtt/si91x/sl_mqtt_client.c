@@ -14,6 +14,7 @@
 * sections of the MSLA applicable to Source Code.
 *
 ******************************************************************************/
+#include "cmsis_os2.h"
 #include "sl_net.h"
 #include "sl_slist.h"
 #include "sl_si91x_driver.h"
@@ -527,9 +528,11 @@ sl_status_t sl_mqtt_client_disconnect(sl_mqtt_client_t *client, uint32_t timeout
                                         sdk_context,
                                         NULL);
 
-  if (status == SL_STATUS_IN_PROGRESS) {
+  if (status == SL_STATUS_IN_PROGRESS)
+  {
     return status;
-  } else if (status != SL_STATUS_OK) {
+  }
+  else if (status != SL_STATUS_OK) {
     SL_CLEANUP_MALLOC(sdk_context);
     return status;
   }

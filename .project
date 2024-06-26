@@ -221,11 +221,6 @@
 			<locationURI>STUDIO_SDK_LOC/extension/wiseconnect/components/common/inc/sl_cmsis_utility.h</locationURI>
 		</link>
 		<link>
-			<name>wiseconnect3_sdk_3.1.4/components/common/inc/sl_constants.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/extension/wiseconnect/components/common/inc/sl_constants.h</locationURI>
-		</link>
-		<link>
 			<name>wiseconnect3_sdk_3.1.4/components/common/inc/sl_ieee802_types.h</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/extension/wiseconnect/components/common/inc/sl_ieee802_types.h</locationURI>
@@ -474,11 +469,6 @@
 			<name>wiseconnect3_sdk_3.1.4/components/service/mqtt/inc/sl_mqtt_client_types.h</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/extension/wiseconnect/components/service/mqtt/inc/sl_mqtt_client_types.h</locationURI>
-		</link>
-		<link>
-			<name>wiseconnect3_sdk_3.1.4/components/service/mqtt/si91x/sl_mqtt_client.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/extension/wiseconnect/components/service/mqtt/si91x/sl_mqtt_client.c</locationURI>
 		</link>
 		<link>
 			<name>wiseconnect3_sdk_3.1.4/components/service/network_manager/inc/sl_net.h</name>

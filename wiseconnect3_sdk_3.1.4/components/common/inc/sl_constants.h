@@ -60,8 +60,8 @@
 #define INFO_TAG    "INFO"
 
 // Defines for error logging
-#define PRINT_ERROR_LOGS 0
-#define PRINT_DEBUG_LOG  0
+#define PRINT_ERROR_LOGS 1
+#define PRINT_DEBUG_LOG  1
 
 #define PRINT_STATUS(tag, status) printf("\r\n%s %s:%d: 0x%lx \r\n", tag, __FILE__, __LINE__, status);
 
