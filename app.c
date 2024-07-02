@@ -34,6 +34,7 @@
 #include "cmsis_os2.h"
 #include "sl_constants.h"
 #include "sl_mqtt_client.h"
+#include "sl_net_wifi_types.h"
 #include "cacert.pem.h"
 #include "sl_wifi.h"
 #include "string.h"
@@ -43,7 +44,11 @@
 /******************************************************
  *                    Constants
  ******************************************************/
+#define AMPAK_FW_VERSION   "v001.01.242701"
+#define VERSION_GOAL        "MQTT long time test setting, get disconnect issue"
+#define MODIFY_START_DATE   "2024.07.02"
 #define AMPAK_USE_BLE 1
+#define AMPAK_USE_SLEEP 0
 
 
 #define MQTT_BROKER_IP   "10.10.28.233"
@@ -327,6 +332,16 @@ sl_status_t mqtt_net_up(void)
     return status;
   }
   printf("Wi-Fi client connected\r\n");
+
+  //! print out IP addr
+  sl_net_wifi_client_profile_t get_profile;
+  status = sl_net_get_profile(SL_NET_WIFI_CLIENT_INTERFACE, SL_NET_DEFAULT_WIFI_CLIENT_PROFILE_ID, &get_profile);
+  sl_ip_address_t ip;
+  ip.type = get_profile.ip.type;
+  ip.ip.v4 = get_profile.ip.ip.v4.ip_address;
+  print_sl_ip_address(&ip);
+  printf("\r\n");
+
   return status;
 }
 
@@ -344,7 +359,7 @@ void mqtt_init(void)
 void mqtt_task(void *argument)
 {
   UNUSED_PARAMETER(argument);
-#if AMPAK_NOT_NET_UP
+#if AMPAK_USE_MQTT_NET_UP
   mqtt_net_up();
 #endif
   mqtt_client_setup();
@@ -589,7 +604,7 @@ sl_status_t mqtt_client_setup()
   printf("Connect to mqtt broker Success \r\n");
 
   //ampak_switch_device_profile_startover();
-#if 1//AMPAK_USE_SLEEP
+#if AMPAK_USE_SLEEP
   osDelay(1000);
   printf("Go DTIM 10\r\n");
   ampak_m4_sleep_wakeup();
